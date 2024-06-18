@@ -8,7 +8,7 @@ import { RiNextjsFill } from "react-icons/ri";
 const What_i_do = () => {
   const titlecolor = useAppStore((state) => state.titlecolor);
   const iconcolor = useAppStore((state) => state.iconcolor);
-  console.log("iii", iconcolor, titlecolor);
+
   const content = [
     {
       icon: MdDeveloperMode,

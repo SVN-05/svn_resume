@@ -23,11 +23,14 @@ const Description = () => {
     <div className="flex items-center justify-center flex-wrap gap-x-24 gap-y-10 md:justify-start">
       <div
         style={{ background: circleBg }}
-        className="w-96 h-96 rounded-full flex flex-col items-center justify-center shadow-type1"
+        className="w-64 h-64 rounded-full flex flex-col items-center justify-center shadow-type1 xl:w-96 xl:h-96"
       >
-        <FaUserSecret size={190} color={iconColor} />
+        <FaUserSecret
+          size={window.innerWidth < 640 ? 150 : 190}
+          color={iconColor}
+        />
       </div>
-      <div className="flex flex-col items-start w-1/2">
+      <div className="flex flex-col items-center md:items-start md:w-1/2">
         <p className="text-base text-grey3 font-light">{resume.jobRole}</p>
         <h1 style={{ color: titleColor }} className="font-bold text-5xl mt-3">
           {userDetails.firstName} {userDetails.lastName}
