@@ -70,19 +70,19 @@ const Slider1 = ({ data = [], perView = 3, spacing = 15 }) => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center gap-2">
-      <div ref={sliderRef} className="keen-slider flex gap-5 items-center mt-5">
-        {data.map((item) => {
+    <div className="w-full relative flex flex-col items-center gap-y-2 mt-5">
+      <div ref={sliderRef} className="keen-slider">
+        {data?.map((item) => {
           return (
             <div
               key={item}
-              className="keen-slider__slide cursor-pointer border border-2 border-solid border-grey9 rounded-md p-5 md:w-52"
+              className="w-full keen-slider__slide cursor-pointer border border-2 border-solid border-grey9 rounded-md py-5"
             >
               <div className="flex flex-col items-center transition-all duration-600 hover:scale-105">
                 <div className="flex items-center gap-2">
                   {item?.icon?.map((item2) => {
                     const Icon = item2;
-                    return <Icon size={45} color={iconColor} />;
+                    return <Icon key={item2} size={45} color={iconColor} />;
                   })}
                 </div>
 
@@ -98,7 +98,7 @@ const Slider1 = ({ data = [], perView = 3, spacing = 15 }) => {
         })}
       </div>
       {loaded && instanceRef.current && (
-        <div className="flex px-3 justify-center md:hidden">
+        <div className="flex px-3 justify-center lg:hidden">
           {[
             ...Array(instanceRef.current.track.details.slides.length).keys(),
           ].map((idx) => {

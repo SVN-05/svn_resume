@@ -44,6 +44,7 @@ const AppNav = () => {
       style={{
         backgroundColor: bgColour,
         boxShadow: "rgba(149, 157, 165, 0.2) 0px 1px 0px 0px",
+        zIndex: 99,
       }}
       className="flex flex-wrap items-center justify-between py-5 sticky top-0 px-5 xl:px-0"
     >
@@ -76,7 +77,7 @@ const AppNav = () => {
         />
       </div>
       <div
-        className={`fixed top-20 right-0 bg-white transition-transform flex flex-col items-start pl-6 pt-4 gap-y-5 ${
+        className={`fixed top-[77px] right-0 bg-white transition-transform flex flex-col items-start pl-6 pt-4 gap-y-5 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         style={{

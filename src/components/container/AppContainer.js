@@ -8,7 +8,7 @@ const AppContainer = ({ children, className }) => {
 
   return (
     <div style={{ backgroundColor: background, color: textcolor }}>
-      <div className={`w-full max-w-[1360px] mx-auto ${className}`}>
+      <div className={`w-full mx-auto ${className} lg:max-w-[1360px]`}>
         {children}
       </div>
     </div>

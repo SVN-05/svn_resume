@@ -9,7 +9,7 @@ const Projects = () => {
   const titlecolor = useAppStore((state) => state.titlecolor);
 
   return (
-    <div className="flex flex-col items-start mt-20">
+    <div className="w-full flex flex-col items-start mt-20">
       <p
         style={{ color: titlecolor }}
         className="text-xl text-start font-semibold"

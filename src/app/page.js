@@ -7,7 +7,7 @@ import Ide from "@/components/about_me/Ide";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center p-10 items-center overflow-hidden lg:items-start lg:pb-32">
+    <main className="flex flex-col items-center p-10 items-center overflow-hidden lg:items-start pb-32">
       <Description />
       <What_i_do />
       <Skills />

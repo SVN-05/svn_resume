@@ -26,7 +26,7 @@ const Description = () => {
         className="w-64 h-64 rounded-full flex flex-col items-center justify-center shadow-type1 xl:w-96 xl:h-96"
       >
         <FaUserSecret
-          size={window.innerWidth < 640 ? 150 : 190}
+          size={window?.innerWidth < 640 ? 150 : 190}
           color={iconColor}
         />
       </div>
