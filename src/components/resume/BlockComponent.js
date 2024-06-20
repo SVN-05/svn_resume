@@ -34,11 +34,11 @@ const BlockComponent = ({
       <div
         style={{ borderColor: lineStrokeColor }}
         className={`w-full flex flex-col items-start pt-2 pl-10 border-l-[1px] ml-5 gap-y-2 ${
-          isLastIndex === false && "border-b-[1px]"
+          isLastIndex === false && "border-b-[1px] pb-4"
         }`}
       >
         <p className="text-lg font-semibold">{title}</p>
-        <p className="text-base">{des}</p>
+        <p className="text-sm text-justify">{des}</p>
       </div>
       {isLastIndex === false && (
         <div

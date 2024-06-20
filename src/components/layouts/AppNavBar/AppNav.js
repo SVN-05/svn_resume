@@ -16,7 +16,6 @@ const AppNav = () => {
   const changeAppTheme = useAppStore((state) => state.changeAppTheme);
   const applyLightTheme = useAppStore((state) => state.applyLightTheme);
   const applyDarkTheme = useAppStore((state) => state.applyDarkTheme);
-  const [bgColour, setBgColour] = useState("transparent");
   const [isOpen, setIsOpen] = useState(false);
   const navBarHeight = "64px";
 
@@ -45,31 +44,10 @@ const AppNav = () => {
     getAppTheme();
   }, []);
 
-  useEffect(() => {
-    function handleScroll() {
-      if (window !== undefined && window.pageYOffset > 50) {
-        if (bgColour !== colors.white) {
-          setBgColour(isToggled ? colors.grey4 : colors.white);
-        }
-      } else {
-        if (bgColour !== "transparent") {
-          setBgColour("transparent");
-        }
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup on unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [bgColour, isToggled]);
-
   return (
     <div
       style={{
-        backgroundColor: bgColour,
+        backgroundColor: isToggled ? colors.grey4 : colors.white,
         boxShadow: "rgba(149, 157, 165, 0.2) 0px 1px 0px 0px",
         zIndex: 99,
       }}
