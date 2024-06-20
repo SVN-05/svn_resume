@@ -12,12 +12,13 @@ const Slider1 = ({ data = [], perView = 3, spacing = 15 }) => {
     : colors.grey8;
   const cardTextColor = useAppStore((state) => state.isDarkMode)
     ? colors.white
-    : colors.grey6;
+    : colors.grey1;
 
   const [loaded, setLoaded] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderProp, setSliderProp] = useState({
     initial: 0,
+    loop: true,
     slides: {
       spacing: 15,
     },
@@ -36,6 +37,7 @@ const Slider1 = ({ data = [], perView = 3, spacing = 15 }) => {
       // sm
       setSliderProp({
         initial: 0,
+        loop: true,
         slides: {
           spacing: 15,
         },
@@ -70,7 +72,7 @@ const Slider1 = ({ data = [], perView = 3, spacing = 15 }) => {
   }, []);
 
   return (
-    <div className="w-full relative flex flex-col items-center gap-y-2 mt-5">
+    <div className="w-full relative flex flex-col items-center gap-y-3 mt-5">
       <div ref={sliderRef} className="keen-slider">
         {data?.map((item) => {
           return (
@@ -98,7 +100,7 @@ const Slider1 = ({ data = [], perView = 3, spacing = 15 }) => {
         })}
       </div>
       {loaded && instanceRef.current && (
-        <div className="flex px-3 justify-center lg:hidden">
+        <div className="flex px-3 gap-1 justify-center lg:hidden">
           {[
             ...Array(instanceRef.current.track.details.slides.length).keys(),
           ].map((idx) => {
@@ -112,7 +114,7 @@ const Slider1 = ({ data = [], perView = 3, spacing = 15 }) => {
                   backgroundColor:
                     currentSlide === idx ? activeDotColor : inactiveDotColor,
                 }}
-                className={"dot"}
+                className={"w-8 h-1 rounded"}
               />
             );
           })}

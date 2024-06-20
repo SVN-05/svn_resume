@@ -16,7 +16,7 @@ const Description = () => {
   const isDarkMode = useAppStore((state) => state.isDarkMode);
   const circleBg = isDarkMode ? colors.grey5 : colors.white;
   const iconColor = useAppStore((state) => state.textColor);
-  const titleColor = isDarkMode ? colors.white : colors.grey6;
+  const titleColor = isDarkMode ? colors.white : colors.grey1;
   const despColor = isDarkMode ? colors.white : colors.grey7;
 
   return (
@@ -48,7 +48,7 @@ const Description = () => {
           </a>
           <a
             href={`mailto:${contactDetails.gmail}`}
-            target="_blank"
+            // target="_blank"
             className="cursor-pointer"
           >
             <Image

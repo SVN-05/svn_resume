@@ -1,25 +1,18 @@
 "use client";
 import React from "react";
 import useAppStore from "@/store/store";
-import Halftinted from "../lines/Halftinted";
 import { colors, ide_content } from "@/utils/constants/constants";
+import Title from "../micro/Title";
 
 const Ide = () => {
-  const titlecolor = useAppStore((state) => state.titlecolor);
   const iconColor = useAppStore((state) => state.iconcolor);
   const cardTextColor = useAppStore((state) => state.isDarkMode)
     ? colors.white
-    : colors.grey6;
+    : colors.grey1;
 
   return (
     <div className="w-full flex flex-col items-start mt-20">
-      <p
-        style={{ color: titlecolor }}
-        className="text-xl text-start font-semibold"
-      >
-        IDEs I worked with
-      </p>
-      <Halftinted width={180} classname="mt-1" />
+      <Title text="IDEs I worked with" width={180} />
       <div className="w-full flex flex-wrap gap-5 items-center mt-5">
         {ide_content.map((item) => {
           const Icon = item?.icon;

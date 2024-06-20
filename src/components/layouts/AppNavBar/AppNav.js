@@ -14,9 +14,36 @@ const AppNav = () => {
   const initial = getFirstletter(userDetails?.firstName);
   const isToggled = useAppStore((state) => state.isDarkMode);
   const changeAppTheme = useAppStore((state) => state.changeAppTheme);
+  const applyLightTheme = useAppStore((state) => state.applyLightTheme);
+  const applyDarkTheme = useAppStore((state) => state.applyDarkTheme);
   const [bgColour, setBgColour] = useState("transparent");
   const [isOpen, setIsOpen] = useState(false);
   const navBarHeight = "64px";
+
+  const handleAppTheme = () => {
+    const theme = localStorage.getItem("theme");
+    if (theme === "light") {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+    changeAppTheme();
+  };
+
+  const getAppTheme = () => {
+    const theme = localStorage.getItem("theme");
+    if (theme === undefined) {
+      localStorage.setItem("theme", "light");
+    } else if (theme === "light") {
+      applyLightTheme();
+    } else {
+      applyDarkTheme();
+    }
+  };
+
+  useEffect(() => {
+    getAppTheme();
+  }, []);
 
   useEffect(() => {
     function handleScroll() {
@@ -46,7 +73,7 @@ const AppNav = () => {
         boxShadow: "rgba(149, 157, 165, 0.2) 0px 1px 0px 0px",
         zIndex: 99,
       }}
-      className="flex flex-wrap items-center justify-between py-5 sticky top-0 px-5 xl:px-0"
+      className="flex flex-wrap items-center justify-between py-5 sticky top-0 px-5 lg:px-16"
     >
       <div className="flex items-center gap-x-3 text-xl">
         <p className={`bg-primary py-1 px-3 rounded-full font-bold text-white`}>
@@ -67,7 +94,7 @@ const AppNav = () => {
             </a>
           );
         })}
-        <ThemeSwitch isToggled={isToggled} handleToggle={changeAppTheme} />
+        <ThemeSwitch isToggled={isToggled} handleToggle={handleAppTheme} />
         <AiOutlineMenu
           size={20}
           className="md:hidden"

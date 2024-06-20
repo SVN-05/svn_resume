@@ -1,13 +1,20 @@
+"use client";
 import React from "react";
+import useAppStore from "@/store/store";
 import AppNav from "./AppNavBar/AppNav";
-import AppContainer from "../container/AppContainer";
 
 const AppLayout = ({ children }) => {
+  const background = useAppStore((state) => state.appBg);
+  const textcolor = useAppStore((state) => state.textcolor);
+
   return (
-    <AppContainer>
+    <div
+      className="w-full h-full"
+      style={{ backgroundColor: background, color: textcolor }}
+    >
       <AppNav />
       {children}
-    </AppContainer>
+    </div>
   );
 };
 

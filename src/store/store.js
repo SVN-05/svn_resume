@@ -16,6 +16,22 @@ const useAppStore = create((set) => ({
       titlecolor: state.isDarkMode ? colors.grey1 : colors.white,
       iconcolor: state.isDarkMode ? colors.primary : colors.blue3,
     })),
+  applyDarkTheme: () =>
+    set((state) => ({
+      isDarkMode: true,
+      appBg: colors.grey4,
+      textcolor: colors.white,
+      titlecolor: colors.white,
+      iconcolor: colors.blue3,
+    })),
+  applyLightTheme: () =>
+    set((state) => ({
+      isDarkMode: false,
+      appBg: colors.white,
+      textcolor: colors.black,
+      titlecolor: colors.grey1,
+      iconcolor: colors.primary,
+    })),
 }));
 
 export default useAppStore;

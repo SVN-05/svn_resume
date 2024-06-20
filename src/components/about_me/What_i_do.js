@@ -4,6 +4,7 @@ import Halftinted from "../lines/Halftinted";
 import useAppStore from "@/store/store";
 import { MdDeveloperMode } from "react-icons/md";
 import { RiNextjsFill } from "react-icons/ri";
+import Title from "../micro/Title";
 
 const What_i_do = () => {
   const titlecolor = useAppStore((state) => state.titlecolor);
@@ -24,13 +25,7 @@ const What_i_do = () => {
 
   return (
     <div className="flex flex-col items-start mt-20">
-      <p
-        style={{ color: titlecolor }}
-        className="text-xl text-start font-semibold"
-      >
-        What I Do
-      </p>
-      <Halftinted classname="mt-1" />
+      <Title text="What I Do" />
       <div className="flex flex-wrap mt-5 gap-10">
         {content.map((item) => {
           const Icon = item.icon;
