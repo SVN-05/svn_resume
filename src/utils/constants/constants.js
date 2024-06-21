@@ -11,6 +11,7 @@ import { SiAndroidstudio, SiXcode } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
 export const colors = theme.extend.colors;
+
 export const userDetails = {
   firstName: "Nagaraj",
   lastName: "S V",
@@ -28,7 +29,7 @@ export const contactDetails = {
 export const navBarOptions = [
   { text: "About Me", link: "/" },
   { text: "Resume", link: "/resume" },
-  { text: "Portfolio", link: "" },
+  { text: "Portfolio", link: "/portfolio" },
   { text: "Contact", link: "" },
 ];
 
@@ -44,30 +45,30 @@ export const hyperLinks = {
 };
 
 export const skills_content = [
-  { icon: [RiJavascriptFill], title: "JavaScript", des: "" },
-  { icon: [BiLogoTypescript], title: "TypeScript", des: "" },
-  { icon: [FaGithub], title: "Github", des: "" },
-  { icon: [FaHtml5], title: "HTML", des: "" },
-  { icon: [IoLogoCss3], title: "CSS", des: "" },
-  { icon: [RiTailwindCssFill], title: "TailWindCSS", des: "" },
-  { icon: [FaServer], title: "RTK Query", des: "" },
-  { icon: [FaJava], title: "Java", des: "" },
+  { icon: [RiJavascriptFill], title: "JavaScript" },
+  { icon: [BiLogoTypescript], title: "TypeScript" },
+  { icon: [FaGithub], title: "Github" },
+  { icon: [FaHtml5], title: "HTML" },
+  { icon: [IoLogoCss3], title: "CSS" },
+  { icon: [RiTailwindCssFill], title: "TailWindCSS" },
+  { icon: [FaServer], title: "RTK Query" },
+  { icon: [FaJava], title: "Java" },
 ];
 
 export const ide_content = [
-  { icon: SiAndroidstudio, title: "Android Studio", des: "" },
-  { icon: VscVscode, title: "Visual Studio Code", des: "" },
-  { icon: SiXcode, title: "Xcode", des: "" },
+  { icon: SiAndroidstudio, title: "Android Studio" },
+  { icon: VscVscode, title: "Visual Studio Code" },
+  { icon: SiXcode, title: "Xcode" },
 ];
 
 export const project_content = [
-  { icon: [IoLogoAndroid], title: "Smart Meter", des: "" },
-  { icon: [CgWebsite], title: "E-Commerce Website", des: "" },
-  { icon: [IoLogoAndroid], title: "SiteScribe", des: "" },
-  { icon: [IoLogoAndroid, FaAppStoreIos], title: "Voxguru", des: "" },
-  { icon: [IoLogoAndroid], title: "HOTI", des: "" },
-  { icon: [IoLogoAndroid, FaAppStoreIos], title: "Truliv ", des: "" },
-  { icon: [CgWebsite], title: "Truliv Web App", des: "" },
+  { icon: [IoLogoAndroid], title: "Smart Meter" },
+  { icon: [CgWebsite], title: "E-Commerce Website" },
+  { icon: [IoLogoAndroid], title: "SiteScribe" },
+  { icon: [IoLogoAndroid, FaAppStoreIos], title: "Voxguru" },
+  { icon: [IoLogoAndroid], title: "HOTI" },
+  { icon: [IoLogoAndroid, FaAppStoreIos], title: "Truliv " },
+  { icon: [CgWebsite], title: "Truliv Web App" },
 ];
 
 export const education = [
@@ -127,10 +128,14 @@ export const experience = [
 
 export const projects = [
   {
+    id: 1,
     startYear: "2020",
     endYear: "2021",
     company_name: "College Project",
-    title: "Smart Meter",
+    image_name: "java.jpeg",
+    language_used: "Java",
+    icons: [IoLogoAndroid],
+    project_name: "Smart Meter",
     des: "I utilised the Java programming language to create my own innovative concept that fits specific criteria, such as viewing power usage information from anywhere via the internet. Additionally, hardware components were employed to transfer data from an electricity metre to a real-time database on Firebase.",
     para: [
       "I utilised the Java programming language to create my own innovative concept that fits specific criteria, such as viewing power usage information from anywhere via the internet. In addition, iOT hardware components such as the Arduino UNO, ESP8266 wifi module, camera module, and so on were utilised to upload data from the power metre to the Firebase real-time database.",
@@ -139,10 +144,14 @@ export const projects = [
     ],
   },
   {
+    id: 2,
     startYear: "2021",
     endYear: "2022",
     company_name: "College project",
-    title: "Smart Meter V3",
+    image_name: "react_native1.jpeg",
+    language_used: "JavaScript",
+    icons: [IoLogoAndroid],
+    project_name: "Smart Meter V3",
     des: "I used Java script to make more enhancements and bring the user experience to the original version of the smart metre project. on this, I built push notification using firebase. The notice is triggered when the user surpasses 50%, 75%, and 100% of the limit the user sets on the limit setting page. I also handled app permission for internet access, wifi access, etc.",
     para: [
       "I utilised the Java programming language to create my own innovative concept that fits specific criteria, such as viewing power usage information from anywhere via the internet. In addition, iOT hardware components such as the Arduino UNO, ESP8266 wifi module, camera module, and so on were utilised to upload data from the power metre to the Firebase real-time database.",
@@ -151,45 +160,69 @@ export const projects = [
     ],
   },
   {
+    id: 3,
     startYear: "2022",
     endYear: "2023",
     company_name: "College Project",
-    title: "E-Commerce Website",
+    image_name: "nextjs_image1.png",
+    language_used: "JavaScript",
+    icons: [RiNextjsFill],
+    project_name: "E-Commerce Website",
     des: "",
   },
   {
+    id: 4,
     startYear: "2023",
     endYear: "Current",
     company_name: "Cyces Innovation Labs",
-    title: "SiteScribe",
+    image_name: "react_native4.png",
+    language_used: "TypeScript",
+    icons: [IoLogoAndroid],
+    project_name: "SiteScribe",
     des: "",
   },
   {
+    id: 5,
     startYear: "2023",
     endYear: "Current",
     company_name: "Cyces Innovation Labs",
-    title: "HOTI",
+    image_name: "react_native2.png",
+    language_used: "JavaScript",
+    icons: [IoLogoAndroid],
+    project_name: "HOTI",
     des: "",
   },
   {
+    id: 6,
     startYear: "2023",
     endYear: "Current",
     company_name: "Cyces Innovation Labs",
-    title: "Voxguru",
+    image_name: "react_native3.jpeg",
+    language_used: "JavaScript",
+    icons: [IoLogoAndroid, FaAppStoreIos],
+    project_name: "Voxguru",
     des: "",
   },
   {
+    id: 7,
     startYear: "2024",
     endYear: "Current",
     company_name: "Cyces Innovation Labs",
-    title: "Truliv",
+    image_name: "react_native5.png",
+    language_used: "JavaScript",
+    icons: [IoLogoAndroid, FaAppStoreIos],
+    project_name: "Truliv",
     des: "",
   },
   {
+    id: 8,
     startYear: "2024",
     endYear: "Current",
     company_name: "Cyces Innovation Labs",
-    title: "Truliv Web App(PWA)",
+    image_name: "nextjs_image2.png",
+    language_used: "JavaScript",
+    icons: [RiNextjsFill],
+    project_name: "Truliv Web App(PWA)",
     des: "",
   },
   // { startYear: "", endYear: "", company_name: "", title: "", des: "", para:""},
@@ -230,3 +263,5 @@ export const resume_skills = [
   //   ],
   // },
 ];
+
+export const portfolio_nav_options = ["All", "React Native", "Next Js", "Java"];

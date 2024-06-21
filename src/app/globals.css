@@ -58,22 +58,16 @@ body {
   background: var(--primary-color);
 }
 
-.dots {
-  display: flex;
-  padding: 10px 0;
-  justify-content: center;
+.portfolio-card-parent-div {
+  position: relative;
+  transition: all 0.3s ease-in-out;
 }
 
-.dot {
-  border: none;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin: 0 5px;
-  padding: 5px;
-  cursor: pointer;
+.portfolio-card-child-div {
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
 }
 
-.dot:focus {
-  outline: none;
+.portfolio-card-parent-div:hover .portfolio-card-child-div {
+  opacity: 1;
 }
