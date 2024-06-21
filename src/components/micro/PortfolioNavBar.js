@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import useAppStore from "@/store/store";
 import { colors } from "@/utils/constants/constants";
 
@@ -7,11 +7,12 @@ const PortfolioNavBar = ({ data = [] }) => {
   const isDarkMode = useAppStore((state) => state.isDarkMode);
   const lineStrokeColor = isDarkMode ? colors.grey1 : colors.grey14;
   const optionColor = isDarkMode ? colors.grey2 : colors.grey4;
-  const [selected, setSelected] = useState("All");
+  const portfolioFilter = useAppStore((state) => state.portfolioFilter);
+  const setPortfolioFilter = useAppStore((state) => state.setPortfolioFilter);
 
   const NavText = ({ text = "" }) => {
     const isSelected = [text?.toLowerCase()]?.includes(
-      selected?.toLocaleLowerCase()
+      portfolioFilter?.toLocaleLowerCase()
     );
 
     return (
@@ -21,7 +22,7 @@ const PortfolioNavBar = ({ data = [] }) => {
           isSelected ? "underline underline-offset-4" : "opacity-60"
         }`}
         onClick={() => {
-          setSelected(text);
+          setPortfolioFilter(text);
         }}
       >
         {text}

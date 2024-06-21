@@ -7,6 +7,7 @@ const useAppStore = create((set) => ({
   textcolor: colors.black,
   titlecolor: colors.grey1,
   iconcolor: colors.primary,
+  portfolioFilter: "All",
   //   Action Functions
   changeAppTheme: () =>
     set((state) => ({
@@ -31,6 +32,10 @@ const useAppStore = create((set) => ({
       textcolor: colors.black,
       titlecolor: colors.grey1,
       iconcolor: colors.primary,
+    })),
+  setPortfolioFilter: (portfolioFilter) =>
+    set(() => ({
+      portfolioFilter: portfolioFilter,
     })),
 }));
 

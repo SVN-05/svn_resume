@@ -1,14 +1,29 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PortfolioCard from "../cards/PortfolioCard";
 import { projects } from "@/utils/constants/constants";
+import useAppStore from "@/store/store";
 
 const PortfolioListContainer = () => {
   const data = projects?.reverse();
+  const [filteredData, setFilteredData] = useState(data);
+  const portfolioFilter = useAppStore((state) => state.portfolioFilter);
+
+  useEffect(() => {
+    const fd =
+      portfolioFilter === "All"
+        ? data
+        : data?.filter(
+            (item) =>
+              String(item?.filter)?.toLocaleLowerCase() ===
+              String(portfolioFilter)?.toLocaleLowerCase()
+          );
+    setFilteredData(fd);
+  }, [portfolioFilter]);
 
   return (
     <div className="w-full grid grid-cols-2 gap-10">
-      {data?.map((item, index) => {
+      {filteredData?.map((item, index) => {
         return (
           <PortfolioCard
             key={index}
