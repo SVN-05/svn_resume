@@ -19,6 +19,14 @@ const PortfolioRightContent = ({ id = 0 }) => {
     { icon: BsCalendarDateFill, text: `${data?.startYear} - ${data?.endYear}` },
   ];
 
+  const Title = ({ text = "" }) => {
+    return (
+      <p style={{ color: titleColor }} className="font-bold text-lg">
+        {text}
+      </p>
+    );
+  };
+
   return (
     <div
       style={{
@@ -26,11 +34,9 @@ const PortfolioRightContent = ({ id = 0 }) => {
         borderColor: borderColor,
         color: textColor,
       }}
-      className={`w-[320px] flex flex-col items-start px-5 py-6 border-2 rounded-lg gap-y-5 text-sm`}
+      className={`w-full flex flex-col items-start px-5 py-6 border-2 rounded-lg gap-y-5 text-sm lg:max-w-[360px]`}
     >
-      <p style={{ color: titleColor }} className="font-semoibold text-lg">
-        Description
-      </p>
+      <Title text="Description" />
       {content?.map((item, index) => {
         const Icon = item?.icon;
         return (
@@ -40,6 +46,20 @@ const PortfolioRightContent = ({ id = 0 }) => {
           </div>
         );
       })}
+      <p className="tracking-wide">{data?.des}</p>
+      <Title text="Technology" />
+      <div className="flex flex-wrap items-start justify-between gap-y-2">
+        {data?.tech?.map((item2, index2) => {
+          return (
+            <p
+              key={index2}
+              className="border-2 text-xs rounded-md px-2 py-[1px]"
+            >
+              {item2}
+            </p>
+          );
+        })}
+      </div>
     </div>
   );
 };

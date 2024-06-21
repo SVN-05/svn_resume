@@ -82,7 +82,7 @@ const Slider2 = ({ data = [] }) => {
       </div>
       <div className="flex w-full items-center justify-between absolute ">
         <div
-          className={`child-div1 ${iconProps?.className}`}
+          className={`child-div1 ${iconProps?.className} rounded-tr-lg rounded-br-lg`}
           onClick={() => {
             instanceRef.current?.prev();
           }}
@@ -94,7 +94,7 @@ const Slider2 = ({ data = [] }) => {
         </div>
 
         <div
-          className={`child-div2 ${iconProps?.className}`}
+          className={`child-div2 ${iconProps?.className} rounded-tl-lg rounded-bl-lg`}
           onClick={() => {
             instanceRef.current?.next();
           }}
