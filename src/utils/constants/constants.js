@@ -273,3 +273,14 @@ export const resume_skills = [
 ];
 
 export const portfolio_nav_options = ["All", "React Native", "Next Js", "Java"];
+
+export const images_array = [
+  "nextjs_image2.png",
+  "react_native5.png",
+  "react_native3.jpeg",
+  "react_native2.png",
+  "react_native4.png",
+  "nextjs_image1.png",
+  "react_native1.jpeg",
+  "java.jpeg",
+];

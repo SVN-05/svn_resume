@@ -71,3 +71,22 @@ body {
 .portfolio-card-parent-div:hover .portfolio-card-child-div {
   opacity: 1;
 }
+
+.parent-div {
+}
+
+.child-div1 {
+  margin-left: -50px;
+}
+
+.child-div2 {
+  margin-right: -50px;
+}
+
+.parent-div:hover .child-div1 {
+  margin-left: 0px;
+}
+
+.parent-div:hover .child-div2 {
+  margin-right: 0px;
+}
