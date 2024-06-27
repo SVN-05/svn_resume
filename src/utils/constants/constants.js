@@ -217,7 +217,11 @@ export const projects = [
     icons: [IoLogoAndroid],
     project_name: "SiteScribe",
     des: "It is a survey project that collects information from a construction site regarding the questions and available response alternatives or possibilities. The question and alternatives are stored in the database. The manager or administrator will allocate project and question groups. There are three buckets: yet to begin the project, finished, and a bulk upload of completed projects. because the programme functions even when the user doesn't have an internet connection.",
-    para: [],
+    para: [
+      "This project is a site survey application, in which the agents will visit the building site designated by the management. The manager can oversee numerous organisations. The management will construct an organisation, question groups, and survey questions with various alternatives or response fields to which the agents may apply their input.",
+      "The agents will use the mobile application to perform the survey.",
+      "The mobile app also supports offline mode, which allows agents to upload their completed surveys when they have access to the network or the internet. The completed form is saved in the device storage using watermelon database.",
+    ],
   },
   {
     id: 5,
@@ -230,7 +234,7 @@ export const projects = [
     tech: ["JavaScript", "Rest API", "Media Upload"],
     icons: [IoLogoAndroid],
     project_name: "HOTI",
-    des: "",
+    des: "Hoti stands for 'Humans of the Internet,' and this application facilitates communication or connectivity among influencers, brands, and agencies. The project's ultimate objective is to locate influencers who are a good fit for their product and market it as best in class.",
     para: [],
   },
   {
@@ -252,7 +256,7 @@ export const projects = [
     ],
     icons: [IoLogoAndroid, FaAppStoreIos],
     project_name: "Voxguru",
-    des: "Cometchat is integrated, and you may share any form of content from another app to my app. There is also a video compressor, an iOS actionsheet, an document, and other file download options in iOS. Finally, integrated media or any type of file picker and Push Notification.",
+    des: "Cometchat is integrated, and you may share any form of content(Images, Audio, Video and documents ) from another app to my app. There is also a video compressor, an iOS actionsheet, an document, and other file download options in iOS. Finally, integrated media or any type of file picker and Push Notification.",
     para: [],
   },
   {

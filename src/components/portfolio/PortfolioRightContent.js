@@ -68,7 +68,7 @@ const PortfolioRightContent = ({ id = 0 }) => {
       })}
       <p className="tracking-wide">{data?.des}</p>
       <Title text="Technology" />
-      <div className="flex flex-wrap items-start justify-between gap-y-2">
+      <div className="flex flex-wrap items-start justify-between gap-2">
         {data?.tech?.map((item2, index2) => {
           return (
             <p
