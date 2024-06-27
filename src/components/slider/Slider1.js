@@ -3,6 +3,7 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import useAppStore from "@/store/store";
 import { colors } from "@/utils/constants/constants";
+import Image from "next/image";
 
 const Slider1 = ({ data = [], perView = 3, spacing = 15 }) => {
   const iconColor = useAppStore((state) => state.iconcolor);
@@ -82,10 +83,19 @@ const Slider1 = ({ data = [], perView = 3, spacing = 15 }) => {
             >
               <div className="flex flex-col items-center transition-all duration-600 hover:scale-105">
                 <div className="flex items-center gap-2">
-                  {item?.icon?.map((item2) => {
-                    const Icon = item2;
-                    return <Icon key={item2} size={45} color={iconColor} />;
-                  })}
+                  {item?.image ? (
+                    <Image
+                      width={0}
+                      height={0}
+                      className="w-[200px] h-20"
+                      src={item?.icon?.[0]}
+                    />
+                  ) : (
+                    item?.icon?.map((item2) => {
+                      const Icon = item2;
+                      return <Icon key={item2} size={45} color={iconColor} />;
+                    })
+                  )}
                 </div>
 
                 <p

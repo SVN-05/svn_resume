@@ -9,10 +9,17 @@ import {
 } from "react-icons/ri";
 import { BiLogoTypescript } from "react-icons/bi";
 import { FaJava } from "react-icons/fa6";
-import { FaServer, FaAppStoreIos, FaGithub } from "react-icons/fa";
+import {
+  FaServer,
+  FaAppStoreIos,
+  FaGithub,
+  FaVestPatches,
+} from "react-icons/fa";
 import { CgWebsite } from "react-icons/cg";
 import { SiAndroidstudio, SiXcode } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
+import { TbBrandRedux } from "react-icons/tb";
+import { bear } from "../ImageIndex";
 
 export const colors = theme.extend.colors;
 
@@ -55,8 +62,11 @@ export const skills_content = [
   { icon: [FaHtml5], title: "HTML" },
   { icon: [IoLogoCss3], title: "CSS" },
   { icon: [RiTailwindCssFill], title: "TailWindCSS" },
+  { icon: [FaVestPatches], title: "Patch Package" },
   { icon: [FaServer], title: "RTK Query" },
   { icon: [FaJava], title: "Java" },
+  { icon: [TbBrandRedux], title: "Redux" },
+  { icon: [bear], title: "Zustand Store", image: true },
 ];
 
 export const ide_content = [
@@ -206,7 +216,7 @@ export const projects = [
     ],
     icons: [IoLogoAndroid],
     project_name: "SiteScribe",
-    des: "",
+    des: "It is a survey project that collects information from a construction site regarding the questions and available response alternatives or possibilities. The question and alternatives are stored in the database. The manager or administrator will allocate project and question groups. There are three buckets: yet to begin the project, finished, and a bulk upload of completed projects. because the programme functions even when the user doesn't have an internet connection.",
     para: [],
   },
   {
