@@ -1,11 +1,15 @@
 import { theme } from "../../../tailwind.config";
 import { IoLogoCss3, IoLogoAndroid } from "react-icons/io";
+import { IoLogoPwa } from "react-icons/io5";
 import { FaHtml5 } from "react-icons/fa6";
-import { RiNextjsFill, RiJavascriptFill } from "react-icons/ri";
+import {
+  RiNextjsFill,
+  RiJavascriptFill,
+  RiTailwindCssFill,
+} from "react-icons/ri";
 import { BiLogoTypescript } from "react-icons/bi";
 import { FaJava } from "react-icons/fa6";
 import { FaServer, FaAppStoreIos, FaGithub } from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
 import { CgWebsite } from "react-icons/cg";
 import { SiAndroidstudio, SiXcode } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
@@ -138,10 +142,10 @@ export const projects = [
     tech: ["Java", "Firebase Realtime DB"],
     icons: [IoLogoAndroid],
     project_name: "Smart Meter",
-    des: "I utilised the Java programming language to create my own innovative concept that fits specific criteria, such as viewing power usage information from anywhere via the internet. Additionally, hardware components were employed to transfer data from an electricity metre to a real-time database on Firebase.",
+    des: "I utilised the Java programming language to create my own innovative concept that fits specific criteria, such as viewing power usage information using the mobile application. Additionally, hardware components were employed to transfer data from an electricity metre to a real-time database on Firebase.",
     para: [
-      "I utilised the Java programming language to create my own innovative concept that fits specific criteria, such as viewing power usage information from anywhere via the internet. In addition, iOT hardware components such as the Arduino UNO, ESP8266 wifi module, camera module, and so on were utilised to upload data from the power metre to the Firebase real-time database.",
-      "The work flow is fairly simple: the camera module takes a snapshot of the digital metre reading, processes the image with Python on an Arduino Uno, and stores the number in Firebase over wifi.",
+      "I utilised the Java programming language to create my own innovative concept that fits specific criteria, such as viewing power usage information using the mobile application. In addition, iOT hardware components such as the Arduino UNO, ESP8266 wifi module, camera module, and so on were utilised to upload data from the power metre to the Firebase real-time database.",
+      "The work flow is quite straightforward; we simulated an electricity metre with an Analong display, a wifi module, and an Arduino UNO. We used Python to provide faked metre readings to an analogue display as input, and then gathered the information from the display's output pins and transmitted it to Firebase. The programme retrieves data and shows it to the user.",
       "In a mobile device, the user must first complete the setup process, which includes entering the mobile number, otp authentication, password, and user details. After that, the user must connect to the same wifi network as the hardware device, and the user will be redirected to a webpage where he must enter the password entered in the user details page. Once done, the user launches the app, which links to the login page. Following login, the user will be taken to the dashboard page.",
     ],
   },
@@ -163,7 +167,7 @@ export const projects = [
     project_name: "Smart Meter V3",
     des: "I used Java script to make more enhancements and bring the user experience to the original version of the smart metre project. on this, I built push notification using firebase. The notice is triggered when the user surpasses 50%, 75%, and 100% of the limit the user sets on the limit setting page. I also handled app permission for internet access, wifi access, etc.",
     para: [
-      "I utilised the Java programming language to create my own innovative concept that fits specific criteria, such as viewing power usage information from anywhere via the internet. In addition, iOT hardware components such as the Arduino UNO, ESP8266 wifi module, camera module, and so on were utilised to upload data from the power metre to the Firebase real-time database.",
+      "I utilised the Java Script programming language to create my own innovative concept that fits specific criteria, such as viewing power usage information from anywhere via the internet. In addition, iOT hardware components such as the Arduino UNO, ESP8266 wifi module, camera module, and so on were utilised to upload data from the power metre to the Firebase real-time database.",
       "The work flow is fairly simple: the camera module takes a snapshot of the digital metre reading, processes the image with Python on an Arduino Uno, and stores the number in Firebase over wifi.",
       "In a mobile device, the user must first complete the setup process, which includes entering the mobile number, otp authentication using firebase, password, and user details. After that, the user must connect to the same wifi network as the hardware device, and the user will be redirected to a webpage where he must enter the password entered in the user details page. Once done, the user launches the app, which links to the login page. Following login, the user will be taken to the dashboard page.",
     ],
@@ -179,7 +183,11 @@ export const projects = [
     tech: ["JavaScript", "Firebase Realtime DB", "Firebase FireStore DB"],
     icons: [RiNextjsFill],
     project_name: "E-Commerce Website",
-    des: "",
+    des: "From initial setup to ultimate website completion, I learned the fundamentals of HTML, CSS, and NextJS.  because its programming language is a blend of JavaScript, HTML, and CSS. It was rather simple for me to learn. With quiet information, I could create a completely functional e-commerce apparel website.",
+    para: [
+      "In this project, I built a website with nextJs, HTML, and CSS. It is an e-commerce clothes website that displays cloth goods for purchase and has numerous categories with filter options.",
+      "The user flow is extremely simple: the user picks a product. and picks the colour, size, and number. After that, the user selects add to cart. If the user is already logged in, the cart page is displayed; otherwise, the user is directed to the login or register page before proceeding to the cart page. Proceed to checkout from the cart section page. In the checkout area, the user must pick the delivery address and payment method.",
+    ],
   },
   {
     id: 4,
@@ -199,6 +207,7 @@ export const projects = [
     icons: [IoLogoAndroid],
     project_name: "SiteScribe",
     des: "",
+    para: [],
   },
   {
     id: 5,
@@ -212,6 +221,7 @@ export const projects = [
     icons: [IoLogoAndroid],
     project_name: "HOTI",
     des: "",
+    para: [],
   },
   {
     id: 6,
@@ -232,10 +242,25 @@ export const projects = [
     ],
     icons: [IoLogoAndroid, FaAppStoreIos],
     project_name: "Voxguru",
-    des: "",
+    des: "Cometchat is integrated, and you may share any form of content from another app to my app. There is also a video compressor, an iOS actionsheet, an document, and other file download options in iOS. Finally, integrated media or any type of file picker and Push Notification.",
+    para: [],
   },
   {
     id: 7,
+    startYear: "2024",
+    endYear: "Current",
+    company_name: "Cyces Innovation Labs",
+    image_name: "nextjs_image2.png",
+    language_used: "JavaScript",
+    filter: "Next Js",
+    tech: ["JavaScript", "Rest API", "Redux ToolKit", "TailwindCSS"],
+    icons: [RiNextjsFill, RiTailwindCssFill, IoLogoPwa],
+    project_name: "Truliv Web App(PWA)",
+    des: "",
+    para: [],
+  },
+  {
+    id: 8,
     startYear: "2024",
     endYear: "Current",
     company_name: "Cyces Innovation Labs",
@@ -246,26 +271,26 @@ export const projects = [
     icons: [IoLogoAndroid, FaAppStoreIos],
     project_name: "Truliv",
     des: "",
-  },
-  {
-    id: 8,
-    startYear: "2024",
-    endYear: "Current",
-    company_name: "Cyces Innovation Labs",
-    image_name: "nextjs_image2.png",
-    language_used: "JavaScript",
-    filter: "Next Js",
-    tech: ["JavaScript", "Rest API", "Redux ToolKit"],
-    icons: [RiNextjsFill],
-    project_name: "Truliv Web App(PWA)",
-    des: "",
+    para: [],
   },
   // { startYear: "", endYear: "", company_name: "", title: "", des: "", para:""},
 ];
 
 export const certificates = [
-  { image: "", title: "", conducted_by: "", project_name: "", date: "" },
-  { image: "", title: "", conducted_by: "", project_name: "", date: "" },
+  {
+    image: "",
+    title: "Android App Developer",
+    conducted_by: "My Captain",
+    project_name: "FB Login & Sign Up Page and Scientific Calculator",
+    date: null,
+  },
+  {
+    image: "",
+    title: "IMP-2021 Conference, NaTToE-2021",
+    conducted_by: "INAE & IIT Hyderabad",
+    project_name: "Smart Meter V3",
+    date: "9-10 July, 2021",
+  },
   // { image: "", title: "", conducted_by: "", project_name: "", date: "" },
 ];
 

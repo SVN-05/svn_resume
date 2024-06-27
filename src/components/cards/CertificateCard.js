@@ -5,10 +5,10 @@ import React from "react";
 
 const CertificateCard = ({
   image = "",
-  title = "",
-  conducted_by = "",
-  project_name = "",
-  date = "",
+  title = null,
+  conducted_by = null,
+  project_name = null,
+  date = null,
 }) => {
   const isDarkMode = useAppStore((state) => state.isDarkMode);
   const titleColor = useAppStore((state) => state.titlecolor);
@@ -32,10 +32,10 @@ const CertificateCard = ({
         className="flex flex-col items-start py-5 ml-7 text-xs"
       >
         <p style={{ color: titleColor }} className="text-lg">
-          Title <span className="text-xs opacity-70">Conducted By</span>
+          {title} <span className="text-xs opacity-70">By: {conducted_by}</span>
         </p>
-        <p>Project Name</p>
-        <p className="opacity-70">Date</p>
+        <p>{project_name}</p>
+        <p className="opacity-70">{date ?? "-"}</p>
       </div>
     </div>
   );

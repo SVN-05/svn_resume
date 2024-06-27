@@ -13,12 +13,15 @@ const PortfolioRightContent = ({ id = 0 }) => {
   const isDarkMode = useAppStore((state) => state.isDarkMode);
   const titleColor = useAppStore((state) => state.titlecolor);
   const iconColor = useAppStore((state) => state.iconcolor);
+
   const bg = isDarkMode ? colors.grey1 : colors.grey6;
   const shareIconBg = isDarkMode ? colors.grey19 : colors.white;
   const shareIconUnmountColor = isDarkMode ? colors.white : colors.grey18;
   const borderColor = isDarkMode ? colors.grey17 : colors.grey11;
   const textColor = isDarkMode ? colors.grey9 : colors.grey7;
+
   const iconSize = 20;
+
   const content = [
     { icon: PiBuildingOfficeFill, text: data?.company_name },
     { icon: BsCalendarDateFill, text: `${data?.startYear} - ${data?.endYear}` },
@@ -51,7 +54,7 @@ const PortfolioRightContent = ({ id = 0 }) => {
         borderColor: borderColor,
         color: textColor,
       }}
-      className={`w-full flex flex-col items-start px-5 py-6 border-2 rounded-lg gap-y-5 text-sm lg:max-w-[360px]`}
+      className={`w-full h-fit flex flex-col items-start px-5 py-6 border-2 rounded-lg gap-y-5 text-sm lg:max-w-[360px] lg:sticky lg:top-24`}
     >
       <Title text="Description" />
       {content?.map((item, index) => {
