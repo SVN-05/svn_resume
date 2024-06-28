@@ -11,7 +11,11 @@ const Determinate = ({ title = "", percentage = 0 }) => {
   const [animPercentage, setAnimPercentage] = useState(0);
 
   useEffect(() => {
-    if (animPercentage <= percentage) {
+    if (animPercentage === 0) {
+      setTimeout(() => {
+        setAnimPercentage(animPercentage + 1);
+      }, 1000);
+    } else if (animPercentage <= percentage) {
       setTimeout(() => {
         setAnimPercentage(animPercentage + 1);
       }, 50);

@@ -35,6 +35,8 @@ export const contactDetails = {
   gmail: "sekarnagaraj74@gmail.com",
   address:
     "A1-201, 2nd floor, Janani Blue Bells, Annai Theresa road, Padur, chennai-603103",
+  mapLink:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d515.4989649160805!2d80.22141031732956!3d12.81056904541756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525bb00e2ab233%3A0xb642d9db8c9a6bf2!2sA1%20Block%2C%20Blue%20Bells%20Apartment!5e0!3m2!1sen!2sin!4v1719572241148!5m2!1sen!2sin",
 };
 
 export const navBarOptions = [
