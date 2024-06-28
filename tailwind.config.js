@@ -44,8 +44,11 @@ module.exports = {
         grey17: "#444",
         grey18: "#9e9e9e",
         grey19: "#999",
+        grey20: "#555",
+        grey21: "#bfbfbf",
         white: "#FFF",
         black: "#000",
+        red: "#dc3545",
       },
       keyframes: {
         enterFromRight: {
