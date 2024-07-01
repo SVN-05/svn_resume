@@ -19,6 +19,7 @@ const AppInput = ({
   values,
   errors,
   inputClassName = "",
+  containerClassName = "",
   isRequired = false,
   isReadOnly = false,
 
@@ -35,10 +36,7 @@ const AppInput = ({
       isRequired={isRequired}
       isReadOnly={isReadOnly}
       isInvalid={error}
-      style={{
-        maxWidth: maxWidth,
-      }}
-      className="w-full flex flex-col items-start relative transition-all duration-500"
+      className={`w-full flex flex-col items-start relative transition-all duration-500 ${containerClassName}`}
     >
       {label && <FormLabel>{label}</FormLabel>}
       {type === "textarea" ? (

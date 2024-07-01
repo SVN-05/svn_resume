@@ -7,8 +7,9 @@ export const sendContactForm = async (formData) => {
         Accept: "application/json",
       },
       body: JSON.stringify(formData),
-    }).then((res) => {
-      return res.json();
+    }).then(async (res) => {
+      const response = await res?.json();
+      return response;
     });
   } catch (error) {
     console.error("Error sending contact form:", error);

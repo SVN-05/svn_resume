@@ -26,7 +26,7 @@ const ContactleftContent = () => {
   ];
 
   return (
-    <div className="w-[36%] flex flex-col items-start gap-y-4">
+    <div className="flex-1 flex flex-col items-start gap-y-4">
       {contact?.map((item, index) => {
         const Icon = item?.icon;
         return (

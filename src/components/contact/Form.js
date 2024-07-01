@@ -63,22 +63,22 @@ const Form = () => {
     setIsLoading(true);
     if (validateForm()) {
       const res = await sendContactForm(formValue);
-      console.log("rrr", res);
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="w-[60%] flex flex-col gap-x-5 justify-between">
+    <div className="flex-1 flex flex-col gap-x-5 mt-5 lg:mt-0">
       <Title text="How Can I Help You?" width={200} />
-      <div className="flex flex-wrap gap-x-5 mt-5">
-        <div className="w-[40%] flex flex-col gap-y-5">
+      <div className="flex flex-wrap relative gap-x-5 mt-5">
+        <div className="flex-1 flex flex-col gap-y-5">
           <AppInput
             name="name"
             label="Name"
             placeholder="Full Name"
             type="text"
             isRequired
+            isReadOnly={isLoading}
             values={formValue}
             errors={errors}
             handleInputChange={handleInputChange}
@@ -89,6 +89,7 @@ const Form = () => {
             placeholder="Email Address"
             type="email"
             isRequired
+            isReadOnly={isLoading}
             values={formValue}
             errors={errors}
             handleInputChange={handleInputChange}
@@ -99,6 +100,7 @@ const Form = () => {
             placeholder="Subject"
             type="text"
             isRequired
+            isReadOnly={isLoading}
             values={formValue}
             errors={errors}
             handleInputChange={handleInputChange}
@@ -110,7 +112,9 @@ const Form = () => {
           placeholder="Message"
           type="textarea"
           height={190}
+          containerClassName="flex-1 mt-5 lg:mt-0"
           isRequired
+          isReadOnly={isLoading}
           values={formValue}
           errors={errors}
           handleInputChange={handleInputChange}

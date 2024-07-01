@@ -10,9 +10,9 @@ const Contact = () => {
   return (
     <div className="w-full flex flex-col items-start">
       <InPageNavBar title="Contact" rightSideText="Get In Touch" />
-      <AppContainer className={"flex flex-col pb-20 mt-20"}>
+      <AppContainer className={"flex flex-col pb-20 mt-20 px-5"}>
         <Map url={contactDetails?.mapLink} height={200} />
-        <div className="flex flex-wrap items-start gap-x-5 mt-10 justify-between">
+        <div className="flex flex-wrap items-start gap-x-7 mt-10 justify-between">
           <ContactleftContent />
           <Form />
         </div>
