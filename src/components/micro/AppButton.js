@@ -2,32 +2,43 @@
 import React, { useState } from "react";
 import useAppStore from "@/store/store";
 import { colors } from "@/utils/constants/constants";
+import { Button } from "@chakra-ui/react";
 
-const Button = ({ text = "", className, onClick = () => {} }) => {
+const AppButton = ({
+  text = "",
+  className,
+  isLoading = false,
+  onClick = () => {},
+}) => {
   const isDarkMode = useAppStore((state) => state.isDarkMode);
   const iconColor = useAppStore((state) => state.iconcolor);
+  const textcolor = useAppStore((state) => state.textcolor);
   const bg = isDarkMode ? colors.white : colors.grey7;
+  const bg2 = isDarkMode ? colors.grey7 : colors.white;
   const [btnBg, setBtnBg] = useState(bg);
 
   return (
-    <button
+    <Button
+      variant={"outline"}
+      isLoading={isLoading}
       style={{
         backgroundColor: btnBg,
         borderColor: iconColor,
         boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+        color: textcolor,
       }}
-      className={`w-fit border-2 rounded-2xl py-2 px-5 transition-all duration-300 ${className}`}
+      className={`w-fit border-2 rounded-2xl py-2 px-5 transition-all duration-300 text-sm ${className}`}
       onMouseOver={() => {
         setBtnBg(iconColor);
       }}
       onMouseOut={() => {
-        setBtnBg(bg);
+        setBtnBg(bg2);
       }}
       onClick={onClick}
     >
       {text}
-    </button>
+    </Button>
   );
 };
 
-export default Button;
+export default AppButton;
