@@ -10,11 +10,9 @@ const page = (props) => {
   const checkPageExists = projects?.some((item) => item?.id === id);
 
   return checkPageExists ? (
-    <AppContainer className="flex flex-col items-start py-10">
-      <div className="w-full flex flex-wrap gap-x-16 gap-y-8">
-        <PortfolioLeftContent images={images_array} id={id} />
-        <PortfolioRightContent id={id} />
-      </div>
+    <AppContainer className="flex flex-wrap items-start py-10 gap-x-16 gap-y-8 px-5 xl:px-0">
+      <PortfolioLeftContent images={images_array} id={id} />
+      <PortfolioRightContent id={id} />
     </AppContainer>
   ) : (
     <NotFound />

@@ -13,7 +13,7 @@ const PortfolioLeftContent = ({ project_name = "", images = [], id = 0 }) => {
     : colors.grey7;
 
   return (
-    <div className={`w-[690px]`}>
+    <div className={`max-w-[690px] relative overflow-hidden`}>
       <a
         href="/portfolio"
         style={{ color: titleColor }}
