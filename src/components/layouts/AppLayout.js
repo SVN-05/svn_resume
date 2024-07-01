@@ -9,7 +9,7 @@ const AppLayout = ({ children }) => {
 
   return (
     <div
-      className="w-full h-full"
+      className="w-full min-h-screen"
       style={{ backgroundColor: background, color: textcolor }}
     >
       <AppNav />

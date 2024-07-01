@@ -33,7 +33,7 @@ const PortfolioNavBar = ({ data = [] }) => {
   return (
     <div
       style={{ borderColor: lineStrokeColor }}
-      className="sticky flex items-center gap-x-10 px-8 border-b-2 py-4 lg:pt-10 lg:border-0 lg:px-0 lg:w-[21%] lg:self-end"
+      className="sticky flex items-center gap-x-10 border-b-2 py-4 lg:pt-10 lg:border-0 lg:self-end"
     >
       {data?.map((item) => {
         return <NavText key={item} text={item} />;

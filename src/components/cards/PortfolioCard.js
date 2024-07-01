@@ -19,7 +19,7 @@ const PortfolioCard = ({
     >
       <div
         style={{ backgroundImage: `url(/${imageName})` }}
-        className="w-full h-full bg-center bg-cover rounded-lg absolute top-0 -left-4 right-0 bottom-0 z-0 transition-all duration-300 translate-x-4 hover:scale-110"
+        className="w-full h-full bg-center bg-cover bg-no-repeat rounded-lg absolute top-0 -left-4 right-0 bottom-0 z-0 transition-all duration-300 translate-x-4 hover:scale-110"
       />
       <p
         style={{ backgroundColor: bg }}

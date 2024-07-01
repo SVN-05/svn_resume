@@ -9,7 +9,7 @@ const Portfolio = () => {
   return (
     <div className="flex flex-col items-start">
       <InPageNavBar title="Portfolio" />
-      <AppContainer className={"flex flex-col pb-20"}>
+      <AppContainer className={"flex flex-col pb-20 px-5 2xl:px-0"}>
         <PortfolioNavBar data={portfolio_nav_options} />
         <PortfolioListContainer />
       </AppContainer>
