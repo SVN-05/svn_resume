@@ -352,3 +352,10 @@ export const images_array = [
   "react_native1.jpeg",
   "java.jpeg",
 ];
+
+export const contactMessageFields = {
+  name: "Name",
+  email: "Email",
+  subject: "Subject",
+  msg: "Message",
+};

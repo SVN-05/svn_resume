@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { contactMessageFields } from "@/utils/constants/constants";
 
 const email = process.env.EMAIL;
 const pass = process.env.EMAIL_PASS;
