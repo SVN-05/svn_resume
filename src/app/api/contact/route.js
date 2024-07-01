@@ -32,10 +32,12 @@ export async function POST(request) {
 
       try {
         const data = { name: name, email: email, subject: subject, msg: msg };
+        const { text, html } = await generateEmailContent(data);
         await transporter.sendMail({
           ...mailOptions,
-          ...generateEmailContent(data),
           subject: subject,
+          text: text,
+          html: html,
         });
         return NextResponse.json(
           { success: true, message: "Email Sent Successfully!!!" },
