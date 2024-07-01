@@ -13,6 +13,43 @@ const Form = () => {
   });
   const [errors, setErrors] = useState({});
 
+  const handleInputChange = ({ e }) => {
+    setFormValue({ ...formValue, [e?.target?.name]: e?.target?.value });
+  };
+
+  const validateForm = () => {
+    const err = {};
+
+    if (!formValue.name) {
+      err.name = "Please enter your name";
+    }
+
+    if (!formValue.email) {
+      err.name = "Please enter your email";
+    }
+
+    if (!formValue.subject) {
+      err.name = "Please enter the subject";
+    }
+
+    if (!formValue.msg) {
+      err.name = "Please enter your message";
+    }
+
+    if (Object.keys(err)?.length) {
+      setErrors(err);
+      return false;
+    }
+
+    setErrors(err);
+    return true;
+  };
+
+  const onFormSubmit = () => {
+    if (validateForm()) {
+    }
+  };
+
   return (
     <div className="w-[60%] flex flex-col gap-x-5 justify-between">
       <Title text="How Can I Help You?" width={200} />
@@ -20,33 +57,48 @@ const Form = () => {
         <div className="w-[40%] flex flex-col gap-y-5">
           <AppInput
             name="name"
+            label="Name"
             placeholder="Full Name"
-            type=""
+            type="text"
+            isRequired
+            values={formValue}
             errors={errors}
+            handleInputChange={handleInputChange}
           />
           <AppInput
             name="email"
+            label="Email"
             placeholder="Email Address"
-            type=""
+            type="email"
+            isRequired
+            values={formValue}
             errors={errors}
+            handleInputChange={handleInputChange}
           />
           <AppInput
             name="subject"
+            label="Subject"
             placeholder="Subject"
-            type=""
+            type="text"
+            isRequired
+            values={formValue}
             errors={errors}
+            handleInputChange={handleInputChange}
           />
         </div>
         <AppInput
           name="msg"
-          inputClassName="text-start"
+          label="Message"
           placeholder="Message"
-          height={190}
           type="textarea"
+          height={190}
+          isRequired
+          values={formValue}
           errors={errors}
+          handleInputChange={handleInputChange}
         />
       </div>
-      <Button text="Send message" className={"mt-4"} />
+      <Button text="Send message" className={"mt-4"} onClick={onFormSubmit} />
     </div>
   );
 };

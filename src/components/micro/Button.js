@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import useAppStore from "@/store/store";
 import { colors } from "@/utils/constants/constants";
 
-const Button = ({ text = "", className }) => {
+const Button = ({ text = "", className, onClick = () => {} }) => {
   const isDarkMode = useAppStore((state) => state.isDarkMode);
   const iconColor = useAppStore((state) => state.iconcolor);
   const bg = isDarkMode ? colors.white : colors.grey7;
@@ -23,6 +23,7 @@ const Button = ({ text = "", className }) => {
       onMouseOut={() => {
         setBtnBg(bg);
       }}
+      onClick={onClick}
     >
       {text}
     </button>
