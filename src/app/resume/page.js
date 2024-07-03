@@ -9,8 +9,8 @@ const Resume = () => {
   return (
     <div className="relative flex flex-col items-start">
       <InPageNavBar title="Resume" rightSideText="2 Years of Experience" />
-      <AppContainer className={"mt-16 pb-10"}>
-        <div className="w-full flex flex-wrap items-start gap-x-20">
+      <AppContainer className={"mt-16 pb-10 px-5 xl:px-0"}>
+        <div className="flex flex-wrap items-start gap-x-20 gap-y-10">
           <Education />
           <Experience />
         </div>

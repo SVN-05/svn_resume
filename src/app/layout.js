@@ -3,6 +3,7 @@ import "./globals.css";
 import AppLayout from "@/components/layouts/AppLayout";
 import SmoothScrolling from "@/components/layouts/SmoothScroll/SmoothScrolling";
 import { Providers } from "./providers/providers";
+import { ContextProvider } from "@/context/context.provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <AppLayout>
           <Providers>
-            <SmoothScrolling>{children}</SmoothScrolling>
+            <SmoothScrolling>
+              <ContextProvider>{children}</ContextProvider>
+            </SmoothScrolling>
           </Providers>
         </AppLayout>
       </body>

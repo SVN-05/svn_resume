@@ -4,8 +4,15 @@ import "keen-slider/keen-slider.min.css";
 import useAppStore from "@/store/store";
 import { colors } from "@/utils/constants/constants";
 import Image from "next/image";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Skeleton } from "@chakra-ui/react";
 
-const Slider1 = ({ data = [], perView = 3, spacing = 15 }) => {
+const Slider1 = ({
+  data = [],
+  perView = 3,
+  spacing = 15,
+  isLoaded = false,
+}) => {
   const iconColor = useAppStore((state) => state.iconcolor);
   const activeDotColor = useAppStore((state) => state.iconcolor);
   const inactiveDotColor = useAppStore((state) => state.isDarkMode)
@@ -33,52 +40,62 @@ const Slider1 = ({ data = [], perView = 3, spacing = 15 }) => {
 
   const [sliderRef, instanceRef] = useKeenSlider(sliderProp);
 
+  const iconProps = {
+    iconSize: 20,
+    iconColor: colors.grey18,
+    className:
+      "bg-grey11 flex flex-col items-center p-3 cursor-pointer transition-all ease-in-out duration-300",
+  };
+
   const updateSliderProps = () => {
-    if (window.innerWidth < 640) {
-      // sm
-      setSliderProp({
-        initial: 0,
-        loop: true,
-        slides: {
-          spacing: 15,
-        },
-        slideChanged(slider) {
-          setCurrentSlide(slider.track.details.rel);
-        },
-        created() {
-          setLoaded(true);
-        },
-      });
-    } else if (window.innerWidth >= 640 && window.innerWidth < 768) {
-      // md
-      setSliderProp({
-        slides: {
-          perView: perView,
-          spacing: spacing,
-        },
-      });
-    } else if (window.innerWidth >= 768) {
-      // lg
-      setSliderProp({
-        slides: {
-          perView: perView,
-          spacing: spacing,
-        },
-      });
+    if (isLoaded) {
+      if (window.innerWidth < 640) {
+        // sm
+        setSliderProp({
+          initial: 0,
+          loop: true,
+          slides: {
+            spacing: 15,
+          },
+          slideChanged(slider) {
+            setCurrentSlide(slider.track.details.rel);
+          },
+          created() {
+            setLoaded(true);
+          },
+        });
+      } else if (window.innerWidth >= 640 && window.innerWidth < 768) {
+        // md
+        setSliderProp({
+          slides: {
+            perView: perView,
+            spacing: spacing,
+          },
+        });
+      } else if (window.innerWidth >= 768) {
+        // lg
+        setSliderProp({
+          slides: {
+            perView: perView,
+            spacing: spacing,
+          },
+        });
+      }
     }
   };
 
   useEffect(() => {
     updateSliderProps();
-  }, []);
+  }, [isLoaded]);
 
   return (
-    <div className="w-full relative flex flex-col items-center gap-y-3 mt-5">
+    <div className="w-full parent-div relative flex flex-col items-center justify-center gap-y-3 mt-5 overflow-hidden">
       <div ref={sliderRef} className="keen-slider">
         {data?.map((item) => {
           return (
-            <div
+            <Skeleton
               key={item}
+              isLoaded={isLoaded}
               className="w-full keen-slider__slide cursor-pointer border border-2 border-solid border-grey9 rounded-md py-5"
             >
               <div className="flex flex-col items-center transition-all duration-600 hover:scale-105">
@@ -105,10 +122,37 @@ const Slider1 = ({ data = [], perView = 3, spacing = 15 }) => {
                   {item?.title}
                 </p>
               </div>
-            </div>
+            </Skeleton>
           );
         })}
       </div>
+      {isLoaded && (
+        <div className="hidden lg:flex w-full items-center justify-between absolute">
+          <div
+            className={`child-div1 ${iconProps?.className} rounded-tr-lg rounded-br-lg`}
+            onClick={() => {
+              instanceRef.current?.prev();
+            }}
+          >
+            <FaChevronLeft
+              size={iconProps?.iconSize}
+              color={iconProps?.iconColor}
+            />
+          </div>
+
+          <div
+            className={`child-div2 ${iconProps?.className} rounded-tl-lg rounded-bl-lg`}
+            onClick={() => {
+              instanceRef.current?.next();
+            }}
+          >
+            <FaChevronRight
+              size={iconProps?.iconSize}
+              color={iconProps?.iconColor}
+            />
+          </div>
+        </div>
+      )}
       {loaded && instanceRef.current && (
         <div className="flex px-3 gap-1 justify-center lg:hidden">
           {[

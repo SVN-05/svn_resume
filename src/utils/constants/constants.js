@@ -1,7 +1,7 @@
 import { theme } from "../../../tailwind.config";
-import { IoLogoCss3, IoLogoAndroid } from "react-icons/io";
+import { IoLogoCss3, IoLogoAndroid, IoIosMail } from "react-icons/io";
 import { IoLogoPwa } from "react-icons/io5";
-import { FaHtml5 } from "react-icons/fa6";
+import { FaHtml5, FaMapLocationDot } from "react-icons/fa6";
 import {
   RiNextjsFill,
   RiJavascriptFill,
@@ -20,6 +20,7 @@ import { SiAndroidstudio, SiXcode } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { TbBrandRedux } from "react-icons/tb";
 import { bear } from "../ImageIndex";
+import { CiMobile3 } from "react-icons/ci";
 
 export const colors = theme.extend.colors;
 
@@ -43,7 +44,8 @@ export const navBarOptions = [
   { text: "About Me", link: "/" },
   { text: "Resume", link: "/resume" },
   { text: "Portfolio", link: "/portfolio" },
-  { text: "Contact", link: "" },
+  { text: "Contact", link: "/contact" },
+  { text: "Extras", link: "/extracomponents" },
 ];
 
 export const resume = {
@@ -359,3 +361,36 @@ export const contactMessageFields = {
   subject: "Subject",
   msg: "Message",
 };
+
+export const contact_left_content = [
+  {
+    icon: CiMobile3,
+    title: "+91 9999999999",
+    des: "Contact me at this number if you have any questions or require assistance in creating your mobile or online application.",
+  },
+  {
+    icon: FaMapLocationDot,
+    title: "India",
+    des: "Contact me at this number if you have any questions or require assistance in creating your mobile or online application.",
+  },
+  {
+    icon: IoIosMail,
+    title: "hello@example.com",
+    des: "Contact me at this number if you have any questions or require assistance in creating your mobile or online application.",
+  },
+];
+
+export const accordian_data = [
+  {
+    title: "React Native",
+    des: "React Native is an open-source UI software framework created by Meta Platforms, Inc. It is used to develop applications for Android, Android TV, iOS, macOS, tvOS, Web, Windows and UWP by enabling developers to use the React framework along with native platform capabilities.",
+  },
+  {
+    title: "Next Js",
+    des: "Next.js is an open-source web development framework created by the private company Vercel providing React-based web applications with server-side rendering and static website generation.",
+  },
+  {
+    title: "Node Js",
+    des: "Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more. Node.js runs on the V8 JavaScript engine, and executes JavaScript code outside a web browser. Node.js lets developers use JavaScript to write command line tools and for server-side scripting. ",
+  },
+];

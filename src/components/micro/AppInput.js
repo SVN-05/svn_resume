@@ -10,7 +10,6 @@ import {
 } from "@chakra-ui/react";
 
 const AppInput = ({
-  maxWidth = 400,
   height = 45,
   label = "",
   name = "",
@@ -36,7 +35,7 @@ const AppInput = ({
       isRequired={isRequired}
       isReadOnly={isReadOnly}
       isInvalid={error}
-      className={`w-full flex flex-col items-start relative transition-all duration-500 ${containerClassName}`}
+      className={`flex flex-col items-start relative transition-all duration-500 ${containerClassName}`}
     >
       {label && <FormLabel>{label}</FormLabel>}
       {type === "textarea" ? (
@@ -50,7 +49,7 @@ const AppInput = ({
             borderWidth: 2,
             color: titlecolor,
           }}
-          className={`w-full border-2 rounded bg-transparent text-sm pl-3 pt-3 ${inputClassName}`}
+          className={`border-2 rounded bg-transparent text-sm pl-3 pt-3 ${inputClassName}`}
           onChange={handleInputChange}
         />
       ) : (
@@ -65,7 +64,7 @@ const AppInput = ({
             borderWidth: 2,
             color: titlecolor,
           }}
-          className={`w-full border-2 rounded bg-transparent text-sm pl-3 ${inputClassName}`}
+          className={`border-2 rounded bg-transparent text-sm pl-3 ${inputClassName}`}
           onChange={handleInputChange}
         />
       )}

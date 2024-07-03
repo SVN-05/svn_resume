@@ -5,7 +5,7 @@ import BlockComponent from "./BlockComponent";
 
 const Education = () => {
   return (
-    <div className="w-[45%] flex flex-col items-start">
+    <div className="flex flex-col items-start lg:flex-1">
       <Title text="Education" />
       <div className="flex flex-col mt-6">
         {education?.reverse()?.map((item, index) => {

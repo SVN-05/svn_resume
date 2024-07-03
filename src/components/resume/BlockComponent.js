@@ -33,7 +33,7 @@ const BlockComponent = ({
       </div>
       <div
         style={{ borderColor: lineStrokeColor }}
-        className={`w-full flex flex-col items-start pt-2 pl-10 border-l-[1px] ml-5 gap-y-2 ${
+        className={`flex flex-col items-start pt-2 pl-10 border-l-[1px] ml-5 gap-y-2 ${
           isLastIndex === false && "border-b-[1px] pb-4"
         }`}
       >

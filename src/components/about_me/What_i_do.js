@@ -1,12 +1,14 @@
 "use client";
-import React from "react";
-import Halftinted from "../lines/Halftinted";
+import React, { useContext } from "react";
 import useAppStore from "@/store/store";
 import { MdDeveloperMode } from "react-icons/md";
 import { RiNextjsFill } from "react-icons/ri";
 import Title from "../micro/Title";
+import { PageContext } from "@/context/context.provider";
+import { SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 
 const What_i_do = () => {
+  const { isLandingLoaded } = useContext(PageContext);
   const titlecolor = useAppStore((state) => state.titlecolor);
   const iconcolor = useAppStore((state) => state.iconcolor);
 
@@ -31,17 +33,32 @@ const What_i_do = () => {
           const Icon = item.icon;
           return (
             <div key={item?.des} className="table mt-5 w-full md:w-[45%]">
-              <Icon size={40} color={iconcolor} className="table-cell mr-5" />
-              <div className="flex flex-col items-start table-cell gap-y-2 align-top">
-                <p
+              <SkeletonCircle
+                isLoaded={isLandingLoaded}
+                width={50}
+                height={50}
+                className="mr-5"
+              >
+                <Icon size={40} color={iconcolor} className="table-cell mr-5" />
+              </SkeletonCircle>
+              <div className="flex flex-col items-start table-cell align-top">
+                <SkeletonText
+                  isLoaded={isLandingLoaded}
+                  noOfLines={1}
+                  height={5}
                   style={{ color: titlecolor }}
                   className="font-semibold text-base"
                 >
                   {item?.title}
-                </p>
-                <p style={{ color: titlecolor }} className="text-sm font-light">
+                </SkeletonText>
+                <SkeletonText
+                  isLoaded={isLandingLoaded}
+                  noOfLines={5}
+                  style={{ color: titlecolor }}
+                  className="text-sm font-light mt-2"
+                >
                   {item?.des}
-                </p>
+                </SkeletonText>
               </div>
             </div>
           );

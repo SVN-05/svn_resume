@@ -1,7 +1,7 @@
 "use client";
 import useAppStore from "@/store/store";
 import { colors } from "@/utils/constants/constants";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Determinate = ({ title = "", percentage = 0 }) => {
   const titleColor = useAppStore((state) => state.titlecolor);
@@ -9,21 +9,39 @@ const Determinate = ({ title = "", percentage = 0 }) => {
   const isDarkMode = useAppStore((state) => state.isDarkMode);
   const progresBorderColor = isDarkMode ? colors.grey17 : colors.grey8;
   const [animPercentage, setAnimPercentage] = useState(0);
+  const targetRef = useRef();
 
   useEffect(() => {
-    if (animPercentage === 0) {
-      setTimeout(() => {
-        setAnimPercentage(animPercentage + 1);
-      }, 1000);
-    } else if (animPercentage <= percentage) {
-      setTimeout(() => {
-        setAnimPercentage(animPercentage + 1);
-      }, 50);
-    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (animPercentage === 0) {
+            setTimeout(() => {
+              setAnimPercentage(animPercentage + 1);
+            }, 700);
+          } else if (animPercentage <= percentage) {
+            setTimeout(() => {
+              setAnimPercentage(animPercentage + 1);
+            }, 50);
+          }
+        } else {
+          setAnimPercentage(0);
+        }
+      });
+    });
+
+    observer.observe(targetRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
   }, [animPercentage]);
 
   return (
-    <div className="w-full flex flex-col items-start gap-y-[3px]">
+    <div
+      ref={targetRef}
+      className="w-full flex flex-col items-start gap-y-[3px]"
+    >
       <div className="w-full flex justify-between items-center">
         <p style={{ color: titleColor }} className="text-sm font-semibold">
           {title}

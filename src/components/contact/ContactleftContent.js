@@ -1,33 +1,14 @@
 "use client";
-import useAppStore from "@/store/store";
 import React from "react";
-import { CiMobile3 } from "react-icons/ci";
-import { FaMapLocationDot } from "react-icons/fa6";
-import { IoIosMail } from "react-icons/io";
+import useAppStore from "@/store/store";
+import { contact_left_content } from "@/utils/constants/constants";
 
 const ContactleftContent = () => {
   const iconColor = useAppStore((state) => state.iconcolor);
-  const contact = [
-    {
-      icon: CiMobile3,
-      title: "+91 9999999999",
-      des: "Contact me at this number if you have any questions or require assistance in creating your mobile or online application.",
-    },
-    {
-      icon: FaMapLocationDot,
-      title: "India",
-      des: "Contact me at this number if you have any questions or require assistance in creating your mobile or online application.",
-    },
-    {
-      icon: IoIosMail,
-      title: "hello@example.com",
-      des: "Contact me at this number if you have any questions or require assistance in creating your mobile or online application.",
-    },
-  ];
 
   return (
     <div className="flex-1 flex flex-col items-start gap-y-4">
-      {contact?.map((item, index) => {
+      {contact_left_content?.map((item, index) => {
         const Icon = item?.icon;
         return (
           <div key={index} className="flex items-start gap-x-5">

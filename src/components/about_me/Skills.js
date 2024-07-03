@@ -1,18 +1,17 @@
 "use client";
-import React from "react";
-import useAppStore from "@/store/store";
-import Halftinted from "../lines/Halftinted";
+import React, { useContext } from "react";
 import { skills_content } from "@/utils/constants/constants";
 import Slider1 from "../slider/Slider1";
 import Title from "../micro/Title";
+import { PageContext } from "@/context/context.provider";
 
 const Skills = () => {
-  const titlecolor = useAppStore((state) => state.titlecolor);
+  const { isLandingLoaded } = useContext(PageContext);
 
   return (
     <div className="w-full flex flex-col items-start mt-20">
       <Title text="Skills" />
-      <Slider1 data={skills_content} />
+      <Slider1 data={skills_content} isLoaded={isLandingLoaded} />
     </div>
   );
 };

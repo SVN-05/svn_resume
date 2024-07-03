@@ -1,10 +1,13 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import useAppStore from "@/store/store";
 import { colors, ide_content } from "@/utils/constants/constants";
 import Title from "../micro/Title";
+import { Skeleton } from "@chakra-ui/react";
+import { PageContext } from "@/context/context.provider";
 
 const Ide = () => {
+  const { isLandingLoaded } = useContext(PageContext);
   const iconColor = useAppStore((state) => state.iconcolor);
   const cardTextColor = useAppStore((state) => state.isDarkMode)
     ? colors.white
@@ -17,8 +20,9 @@ const Ide = () => {
         {ide_content.map((item) => {
           const Icon = item?.icon;
           return (
-            <div
+            <Skeleton
               key={item}
+              isLoaded={isLandingLoaded}
               className="w-full border border-2 border-solid border-grey9 rounded-md p-5 lg:flex-1"
             >
               <div className="flex flex-col items-center transition-all duration-600 hover:scale-105">
@@ -30,7 +34,7 @@ const Ide = () => {
                   {item?.title}
                 </p>
               </div>
-            </div>
+            </Skeleton>
           );
         })}
       </div>

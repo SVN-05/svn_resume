@@ -4,6 +4,7 @@ import Title from "../micro/Title";
 import AppInput from "../micro/AppInput";
 import AppButton from "../micro/AppButton";
 import { sendContactForm } from "@/lib/api";
+import { toastFunction } from "@/utils/helpers/methods";
 
 const Form = () => {
   const [formValue, setFormValue] = useState({
@@ -51,6 +52,7 @@ const Form = () => {
 
     if (Object.keys(err)?.length) {
       setErrors(err);
+      toastFunction("Form is Incomplete!!!", "error");
       setIsLoading(false);
       return false;
     }
@@ -63,6 +65,9 @@ const Form = () => {
     setIsLoading(true);
     if (validateForm()) {
       const res = await sendContactForm(formValue);
+      setFormValue({ ...prev, name: "", email: "", subject: "", msg: "" });
+      toastFunction("Form Successfully Submitted!!!");
+      toastFunction("Will contact u soon");
       setIsLoading(false);
     }
   };
@@ -71,7 +76,7 @@ const Form = () => {
     <div className="flex-1 flex flex-col gap-x-5 mt-5 lg:mt-0">
       <Title text="How Can I Help You?" width={200} />
       <div className="flex flex-wrap relative gap-x-5 mt-5">
-        <div className="flex-1 flex flex-col gap-y-5">
+        <div className="w-full flex flex-col gap-y-5 lg:flex-1">
           <AppInput
             name="name"
             label="Name"
@@ -112,7 +117,7 @@ const Form = () => {
           placeholder="Message"
           type="textarea"
           height={190}
-          containerClassName="flex-1 mt-5 lg:mt-0"
+          containerClassName="mt-5 lg:flex-1 lg:mt-0"
           isRequired
           isReadOnly={isLoading}
           values={formValue}
