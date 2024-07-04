@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import useAppStore from "@/store/store";
 import { colors } from "@/utils/constants/constants";

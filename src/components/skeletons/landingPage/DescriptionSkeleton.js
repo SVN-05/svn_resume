@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
+import { skeletonLineHeight } from "@/utils/constants/constants";
 
 const DescriptionSkeleton = () => {
   return (
@@ -9,18 +10,18 @@ const DescriptionSkeleton = () => {
         <SkeletonText
           maxWidth={"150px"}
           noOfLines={1}
-          skeletonHeight={"12px"}
+          lineHeight={skeletonLineHeight}
         />
         <SkeletonText
           maxWidth={"150px"}
           noOfLines={1}
-          skeletonHeight={"12px"}
+          lineHeight={skeletonLineHeight}
         />
-        <SkeletonText skeletonHeight={"12px"} noOfLines={5} />
+        <SkeletonText lineHeight={skeletonLineHeight} noOfLines={5} />
         <SkeletonText
           maxWidth={"200px"}
           noOfLines={1}
-          skeletonHeight={"12px"}
+          lineHeight={skeletonLineHeight}
         />
       </Container>
     </div>

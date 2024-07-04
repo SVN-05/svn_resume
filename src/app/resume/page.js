@@ -1,11 +1,21 @@
-import React from "react";
+"use client";
+import React, { useContext, useEffect } from "react";
 import AppContainer from "@/components/container/AppContainer";
 import InPageNavBar from "@/components/layouts/InPageNavBar/InPageNavBar";
 import Education from "@/components/resume/Education";
 import Experience from "@/components/resume/Experience";
 import Certificates from "@/components/resume/Certificates";
+import { PageContext } from "@/context/context.provider";
 
 const Resume = () => {
+  const { isResumeLoaded, setIsResumeLoaded } = useContext(PageContext);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsResumeLoaded(!isResumeLoaded);
+    }, 2000);
+  }, []);
+
   return (
     <div className="relative flex flex-col items-start">
       <InPageNavBar title="Resume" rightSideText="2 Years of Experience" />

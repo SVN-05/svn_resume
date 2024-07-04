@@ -24,8 +24,6 @@ const Determinate = ({ title = "", percentage = 0 }) => {
               setAnimPercentage(animPercentage + 1);
             }, 50);
           }
-        } else {
-          setAnimPercentage(0);
         }
       });
     });

@@ -24,6 +24,7 @@ import { CiMobile3 } from "react-icons/ci";
 
 export const colors = theme.extend.colors;
 export const array3 = [1, 2, 3];
+export const skeletonLineHeight = "12px";
 
 export const userDetails = {
   firstName: "Nagaraj",
