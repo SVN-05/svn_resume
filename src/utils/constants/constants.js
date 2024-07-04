@@ -23,6 +23,7 @@ import { bear } from "../ImageIndex";
 import { CiMobile3 } from "react-icons/ci";
 
 export const colors = theme.extend.colors;
+export const array3 = [1, 2, 3];
 
 export const userDetails = {
   firstName: "Nagaraj",

@@ -5,7 +5,8 @@ import { MdDeveloperMode } from "react-icons/md";
 import { RiNextjsFill } from "react-icons/ri";
 import Title from "../micro/Title";
 import { PageContext } from "@/context/context.provider";
-import { SkeletonCircle, SkeletonText } from "@chakra-ui/react";
+import WhatIDoSkeleton from "../skeletons/landingPage/WhatIDoSkeleton";
+import { Wrap, WrapItem } from "@chakra-ui/react";
 
 const What_i_do = () => {
   const { isLandingLoaded } = useContext(PageContext);
@@ -26,43 +27,43 @@ const What_i_do = () => {
   ];
 
   return (
-    <div className="flex flex-col items-start mt-20">
+    <div className="w-full flex flex-col self-start mt-20">
       <Title text="What I Do" />
-      <div className="flex flex-wrap mt-5 gap-10">
-        {content.map((item) => {
-          const Icon = item.icon;
-          return (
-            <div key={item?.des} className="table mt-5 w-full md:w-[45%]">
-              <SkeletonCircle
-                isLoaded={isLandingLoaded}
-                width={50}
-                height={50}
-                className="mr-5"
-              >
-                <Icon size={40} color={iconcolor} className="table-cell mr-5" />
-              </SkeletonCircle>
-              <div className="flex flex-col items-start table-cell align-top">
-                <SkeletonText
-                  isLoaded={isLandingLoaded}
-                  noOfLines={1}
-                  height={5}
-                  style={{ color: titlecolor }}
-                  className="font-semibold text-base"
+      <div className="w-full flex flex-wrap mt-5 gap-x-16 gap-y-10">
+        {isLandingLoaded
+          ? content.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item?.des}
+                  className="flex items-start mt-5 lg:flex-1"
                 >
-                  {item?.title}
-                </SkeletonText>
-                <SkeletonText
-                  isLoaded={isLandingLoaded}
-                  noOfLines={5}
-                  style={{ color: titlecolor }}
-                  className="text-sm font-light mt-2"
-                >
-                  {item?.des}
-                </SkeletonText>
-              </div>
-            </div>
-          );
-        })}
+                  <div width={50} height={50} className="mr-5">
+                    <Icon size={40} color={iconcolor} />
+                  </div>
+                  <div className="flex flex-col items-start align-top">
+                    <p
+                      noOfLines={1}
+                      height={5}
+                      style={{ color: titlecolor }}
+                      className="font-semibold text-base"
+                    >
+                      {item?.title}
+                    </p>
+                    <p
+                      noOfLines={5}
+                      style={{ color: titlecolor }}
+                      className="text-sm font-light mt-2"
+                    >
+                      {item?.des}
+                    </p>
+                  </div>
+                </div>
+              );
+            })
+          : [1, 2]?.map((item2) => {
+              return <WhatIDoSkeleton key={item2} />;
+            })}
       </div>
     </div>
   );

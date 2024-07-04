@@ -11,8 +11,8 @@ import {
 } from "@/utils/constants/constants";
 import Image from "next/image";
 import { gmail } from "@/utils/ImageIndex";
-import { Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 import { PageContext } from "@/context/context.provider";
+import DescriptionSkeleton from "../skeletons/landingPage/DescriptionSkeleton";
 
 const Description = () => {
   const { isLandingLoaded } = useContext(PageContext);
@@ -22,9 +22,9 @@ const Description = () => {
   const titleColor = isDarkMode ? colors.white : colors.grey1;
   const despColor = isDarkMode ? colors.white : colors.grey7;
 
-  return (
+  return isLandingLoaded ? (
     <div className="flex items-center justify-center flex-wrap gap-x-24 gap-y-10 md:justify-start">
-      <SkeletonCircle
+      <div
         width={256}
         height={256}
         isLoaded={isLandingLoaded}
@@ -35,28 +35,28 @@ const Description = () => {
           size={window?.innerWidth < 640 ? 150 : 190}
           color={iconColor}
         />
-      </SkeletonCircle>
+      </div>
       <div className="flex flex-col items-center md:items-start md:w-1/2">
-        <SkeletonText
+        <p
           isLoaded={isLandingLoaded}
           noOfLines={1}
           className="text-base text-grey3 font-light"
         >
           {resume.jobRole}
-        </SkeletonText>
-        <SkeletonText isLoaded={isLandingLoaded} noOfLines={1}>
+        </p>
+        <p isLoaded={isLandingLoaded} noOfLines={1}>
           <h1 style={{ color: titleColor }} className="font-bold text-5xl mt-3">
             {userDetails.firstName} {userDetails.lastName}
           </h1>
-        </SkeletonText>
-        <SkeletonText
+        </p>
+        <p
           isLoaded={isLandingLoaded}
           style={{ color: despColor }}
           className="text-wrap text-m mt-5"
         >
           {resume?.description}
-        </SkeletonText>
-        <Skeleton
+        </p>
+        <div
           isLoaded={isLandingLoaded}
           className="flex gap-5 items-center mt-2"
         >
@@ -83,9 +83,11 @@ const Description = () => {
           <a href="https://github.com/SVN-05" target="_blank">
             <FaGithubSquare size={30} />
           </a>
-        </Skeleton>
+        </div>
       </div>
     </div>
+  ) : (
+    <DescriptionSkeleton />
   );
 };
 
