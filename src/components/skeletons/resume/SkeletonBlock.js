@@ -1,5 +1,5 @@
 import React from "react";
-import { SkeletonText } from "@chakra-ui/react";
+import { Box, Center, Skeleton, SkeletonText } from "@chakra-ui/react";
 import useAppStore from "@/store/store";
 import { colors, skeletonLineHeight } from "@/utils/constants/constants";
 
@@ -10,13 +10,19 @@ const SkeletonBlock = ({ isLastIndex = false }) => {
 
   return (
     <div>
-      <SkeletonText
-        maxWidth={100}
-        noOfLines={1}
-        style={{ borderColor: iconcolor }}
-        className="border-2 rounded-2xl px-3 py-2"
-        lineHeight={skeletonLineHeight}
-      />
+      <Box display="flex" alignItems={"center"} gap={5}>
+        <Center
+          style={{ borderColor: iconcolor }}
+          className="border-2 rounded-2xl px-3 py-2"
+        >
+          <SkeletonText
+            width={"100px"}
+            noOfLines={1}
+            lineHeight={skeletonLineHeight}
+          />
+        </Center>
+        <Skeleton height={skeletonLineHeight} width="36px" />
+      </Box>
       <div
         style={{ borderColor: lineStrokeColor }}
         className={`flex flex-col pt-2 pl-10 border-l-[1px] ml-5 gap-y-3 mt-2 ${
