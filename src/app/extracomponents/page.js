@@ -30,6 +30,7 @@ const ExtraComponents = () => {
           <SimpleTab
             tabTitles={titles}
             tabDatas={descriptions}
+            variant="line"
             showTabBarIndicator
             containerClassName="mt-5 border-[1px]"
           />

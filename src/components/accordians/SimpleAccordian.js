@@ -43,19 +43,23 @@ const SimpleAccordian = ({
               borderBottomColor: colors.white,
             }}
           >
-            <AccordionButton
-              _expanded={{
-                backgroundColor: colors.grey17,
-                borderBottomWidth: 0,
-              }}
-              className={`${!isLastindex && "border-b-[1px] border-white"}`}
-            >
-              <Box as="span" flex="1" textAlign="left">
-                {item?.title}
-              </Box>
-              <AccordionIcon color={iconColor} />
-            </AccordionButton>
-            <AccordionPanel>{item?.des}</AccordionPanel>
+            {({ isExpanded }) => (
+              <>
+                <AccordionButton
+                  _expanded={{
+                    backgroundColor: colors.grey17,
+                    borderBottomWidth: 0,
+                  }}
+                  className={`${!isLastindex && "border-b-[1px] border-white"}`}
+                >
+                  <Box as="span" flex="1" textAlign="left">
+                    {item?.title}
+                  </Box>
+                  <AccordionIcon color={iconColor} />
+                </AccordionButton>
+                {isExpanded && <AccordionPanel>{item?.des}</AccordionPanel>}
+              </>
+            )}
           </AccordionItem>
         );
       })}

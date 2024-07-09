@@ -60,8 +60,8 @@ const SimpleTab = ({
       </TabList>
       {showTabBarIndicator && (
         <TabIndicator
-          mt="-1.5px"
-          height="2px"
+          mt="-3px"
+          height="3px"
           bg={iconcolor}
           borderRadius="1px"
         />
