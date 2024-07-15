@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
+  Collapse,
 } from "@chakra-ui/react";
 import useAppStore from "@/store/store";
 import { colors } from "@/utils/constants/constants";
@@ -28,7 +29,7 @@ const SimpleAccordian = ({
       allowMultiple={allowMultiple}
       allowToggle={allowToggle}
       reduceMotion={reduceMotion}
-      className={`w-full transition-all duration-500 ${containerClassName}`}
+      className={`w-full ${containerClassName}`}
     >
       {data?.map((item, index) => {
         const isDisabled = disabledAccordians?.includes(index);

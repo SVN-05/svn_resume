@@ -65,7 +65,7 @@ const Form = () => {
     setIsLoading(true);
     if (validateForm()) {
       const res = await sendContactForm(formValue);
-      setFormValue({ ...prev, name: "", email: "", subject: "", msg: "" });
+      setFormValue({ ...formValue, name: "", email: "", subject: "", msg: "" });
       toastFunction("Form Successfully Submitted!!!");
       toastFunction("Will contact u soon");
       setIsLoading(false);
