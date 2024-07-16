@@ -13,7 +13,7 @@ const Experience = () => {
       <Title text="Experience" width={110} />
       <div className="w-full flex flex-col mt-6">
         {isResumeLoaded
-          ? experience?.reverse()?.map((item, index) => {
+          ? experience?.map((item, index) => {
               const isLastIndex = experience?.length - 1 === index;
 
               return (

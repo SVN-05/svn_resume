@@ -9,8 +9,11 @@ import {
 import { getFirstletter } from "@/utils/helpers/methods";
 import useAppStore from "@/store/store";
 import { AiOutlineMenu } from "react-icons/ai";
+import { useTheme } from "next-themes";
 
 const AppNav = () => {
+  const { setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const initial = getFirstletter(userDetails?.firstName);
   const isToggled = useAppStore((state) => state.isDarkMode);
   const changeAppTheme = useAppStore((state) => state.changeAppTheme);
@@ -20,20 +23,16 @@ const AppNav = () => {
   const navBarHeight = "64px";
 
   const handleAppTheme = () => {
-    const theme = localStorage.getItem("theme");
-    if (theme === "light") {
-      localStorage.setItem("theme", "dark");
+    if (resolvedTheme === "light") {
+      setTheme("dark");
     } else {
-      localStorage.setItem("theme", "light");
+      setTheme("light");
     }
     changeAppTheme();
   };
 
   const getAppTheme = () => {
-    const theme = localStorage.getItem("theme");
-    if (theme === undefined) {
-      localStorage.setItem("theme", "light");
-    } else if (theme === "light") {
+    if (resolvedTheme === "light") {
       applyLightTheme();
     } else {
       applyDarkTheme();
@@ -41,6 +40,7 @@ const AppNav = () => {
   };
 
   useEffect(() => {
+    setMounted(true);
     getAppTheme();
   }, []);
 
@@ -60,7 +60,7 @@ const AppNav = () => {
         <span className="font-semibold">{userDetails?.firstName}</span>{" "}
         {userDetails?.lastName}
       </div>
-      <div className="flex items-center gap-x-5 text-sm tracking-normal md:gap-x-14">
+      <div className="flex items-center gap-x-5 text-sm tracking-normal transform-all duration-500 md:gap-x-14">
         {navBarOptions?.map((item) => {
           return (
             <a
@@ -72,7 +72,9 @@ const AppNav = () => {
             </a>
           );
         })}
-        <ThemeSwitch isToggled={isToggled} handleToggle={handleAppTheme} />
+        {mounted && (
+          <ThemeSwitch isToggled={isToggled} handleToggle={handleAppTheme} />
+        )}
         <AiOutlineMenu
           size={20}
           className="md:hidden"

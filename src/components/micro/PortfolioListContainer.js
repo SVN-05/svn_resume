@@ -8,26 +8,29 @@ import SkeletonPortfolioCard from "../skeletons/cards/SkeletonPortfolioCard";
 
 const PortfolioListContainer = () => {
   const { isPortfolioLoaded, setIsPortfolioLoaded } = useContext(PageContext);
-  const data = projects?.reverse();
-  const [filteredData, setFilteredData] = useState(data);
+  const [filteredData, setFilteredData] = useState([]);
   const portfolioFilter = useAppStore((state) => state.portfolioFilter);
 
   useEffect(() => {
     setTimeout(() => {
+      setFilteredData(projects?.reverse());
       setIsPortfolioLoaded(!isPortfolioLoaded);
     }, 2000);
   }, []);
 
   useEffect(() => {
-    const fd =
-      portfolioFilter === "All"
-        ? data
-        : data?.filter(
-            (item) =>
-              String(item?.filter)?.toLocaleLowerCase() ===
-              String(portfolioFilter)?.toLocaleLowerCase()
-          );
-    setFilteredData(fd);
+    if (portfolioFilter === "All") {
+      setFilteredData(projects);
+    } else {
+      const fd = projects
+        ?.reverse()
+        ?.filter(
+          (item) =>
+            String(item?.filter)?.toLocaleLowerCase() ===
+            String(portfolioFilter)?.toLocaleLowerCase()
+        );
+      setFilteredData(fd);
+    }
   }, [portfolioFilter]);
 
   return (

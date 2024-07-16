@@ -13,7 +13,7 @@ const Education = () => {
       <Title text="Education" />
       <div className="w-full flex flex-col mt-6">
         {isResumeLoaded
-          ? education?.reverse()?.map((item, index) => {
+          ? education?.map((item, index) => {
               const isLastIndex = education?.length - 1 === index;
 
               return (
