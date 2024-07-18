@@ -50,6 +50,8 @@ module.exports = {
         white: "#FFF",
         black: "#000",
         red: "#dc3545",
+        lightBlue3: "#BBDEFF",
+        lightGreen2: "#C9E8CB",
       },
       keyframes: {
         enterFromRight: {

@@ -10,18 +10,21 @@ import { getFirstletter } from "@/utils/helpers/methods";
 import useAppStore from "@/store/store";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
+import SideDrawer from "../SideDrawer";
 
 const AppNav = () => {
+  const pathName = usePathname();
   const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const initial = getFirstletter(userDetails?.firstName);
   const isToggled = useAppStore((state) => state.isDarkMode);
+  const appBg = useAppStore((state) => state.appBg);
   const changeAppTheme = useAppStore((state) => state.changeAppTheme);
   const applyLightTheme = useAppStore((state) => state.applyLightTheme);
   const applyDarkTheme = useAppStore((state) => state.applyDarkTheme);
   const [isOpen, setIsOpen] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
-  const navBarHeight = "64px";
 
   const handleAppTheme = () => {
     if (resolvedTheme === "light") {
@@ -61,12 +64,18 @@ const AppNav = () => {
         <span className="font-semibold">{userDetails?.firstName}</span>{" "}
         {userDetails?.lastName}
       </div>
-      <div className="flex items-center gap-x-5 text-sm tracking-normal transform-all duration-500 md:gap-x-14">
+      <div className="flex items-center gap-x-5 tracking-normal transform-all duration-500 md:gap-x-14">
         {navBarOptions?.map((item) => {
+          const currentTab = pathName === item?.link;
+
           return (
             <a
               key={item?.text}
               href={item?.link}
+              style={{
+                fontWeight: currentTab ? "bold" : 400,
+                fontSize: currentTab ? 15 : 14,
+              }}
               className="hidden cursor-pointer hover:underline underline-offset-8 md:flex"
             >
               {item?.text}
@@ -87,40 +96,19 @@ const AppNav = () => {
             if (isOpen === false) {
               setTimeout(() => {
                 setShowOverlay(!showOverlay);
-              }, 300);
+              }, 400);
             }
           }}
         />
       </div>
-      <div
-        className={`w-full fixed top-[77px] right-0 transition-transform flex flex-col items-startgap-y-5 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-        style={{
-          height: `calc(100vh - ${navBarHeight})`,
-          transition: "transform 0.3s ease-in-out",
-        }}
-      >
-        {showOverlay && (
-          <div className="z-10 w-full bg-black absolute top-0 right-0 bottom-0 left-0 opacity-50" />
-        )}
-        <div className="flex flex-col z-20 text-black gap-y-3 text-lg bg-white w-1/2 h-full self-end pl-6 pt-4 ">
-          {navBarOptions?.map((item2) => {
-            return (
-              <a
-                key={item2?.text}
-                href={item2?.link}
-                onClick={() => {
-                  setShowOverlay(!showOverlay);
-                  setIsOpen(!isOpen);
-                }}
-              >
-                {item2?.text}
-              </a>
-            );
-          })}
-        </div>
-      </div>
+      <SideDrawer
+        isToggled={isToggled}
+        appBg={appBg}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        showOverlay={showOverlay}
+        setShowOverlay={setShowOverlay}
+      />
     </div>
   );
 };

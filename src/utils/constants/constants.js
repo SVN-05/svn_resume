@@ -16,11 +16,15 @@ import {
   FaVestPatches,
 } from "react-icons/fa";
 import { CgWebsite } from "react-icons/cg";
-import { SiAndroidstudio, SiXcode } from "react-icons/si";
+import { SiAndroidstudio, SiXcode, SiReactiveresume } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { TbBrandRedux } from "react-icons/tb";
 import { bear } from "../ImageIndex";
 import { CiMobile3 } from "react-icons/ci";
+import { HiUserCircle } from "react-icons/hi";
+import { RiContactsFill } from "react-icons/ri";
+import { ImBook } from "react-icons/im";
+import { IoFileTrayFull } from "react-icons/io5";
 
 export const colors = theme.extend.colors;
 export const array3 = [1, 2, 3];
@@ -43,11 +47,11 @@ export const contactDetails = {
 };
 
 export const navBarOptions = [
-  { text: "About Me", link: "/" },
-  { text: "Resume", link: "/resume" },
-  { text: "Portfolio", link: "/portfolio" },
-  { text: "Contact", link: "/contact" },
-  { text: "Extras", link: "/extracomponents" },
+  { text: "About Me", link: "/", icon: HiUserCircle },
+  { text: "Resume", link: "/resume", icon: SiReactiveresume },
+  { text: "Portfolio", link: "/portfolio", icon: IoFileTrayFull },
+  { text: "Contact", link: "/contact", icon: RiContactsFill },
+  { text: "Extras", link: "/extracomponents", icon: ImBook },
 ];
 
 export const resume = {
