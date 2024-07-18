@@ -49,6 +49,7 @@ const SideDrawer = ({
 
           return (
             <div
+              key={item2?.text}
               style={{
                 transform: isOpen ? "scaleY(1)" : "scaleY(0)",
                 opacity: isOpen ? 1 : 0,
@@ -61,7 +62,6 @@ const SideDrawer = ({
             >
               <Icon color={iconcolor} size={25} />
               <a
-                key={item2?.text}
                 href={item2?.link}
                 onClick={() => {
                   setShowOverlay(!showOverlay);
