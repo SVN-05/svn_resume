@@ -15,6 +15,11 @@ const Form = () => {
   });
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const error = [
+    "Method Not Allowed",
+    "Internal Server Error",
+    "Failed to send email.",
+  ];
 
   const handleInputChange = ({ target }) => {
     setFormValue({ ...formValue, [target?.name]: target?.value });
@@ -65,10 +70,21 @@ const Form = () => {
     setIsLoading(true);
     if (validateForm()) {
       const res = await sendContactForm(formValue);
-      setFormValue({ ...formValue, name: "", email: "", subject: "", msg: "" });
-      toastFunction("Form Successfully Submitted!!!");
-      toastFunction("Will contact u soon");
-      setIsLoading(false);
+      if (error?.includes(res?.message)) {
+        toastFunction(res?.message, "error");
+        toastFunction("Please try again later", "error");
+      } else {
+        setFormValue({
+          ...formValue,
+          name: "",
+          email: "",
+          subject: "",
+          msg: "",
+        });
+        toastFunction("Form Successfully Submitted!!!");
+        toastFunction("Will contact u soon");
+        setIsLoading(false);
+      }
     }
   };
 
