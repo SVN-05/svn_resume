@@ -15,8 +15,8 @@ import SideDrawer from "../SideDrawer";
 
 const AppNav = () => {
   const pathName = usePathname();
-  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { setTheme, resolvedTheme } = useTheme();
   const initial = getFirstletter(userDetails?.firstName);
   const isToggled = useAppStore((state) => state.isDarkMode);
   const appBg = useAppStore((state) => state.appBg);
@@ -44,8 +44,8 @@ const AppNav = () => {
   };
 
   useEffect(() => {
-    setMounted(true);
     getAppTheme();
+    setMounted(true);
   }, []);
 
   return (
