@@ -46,7 +46,7 @@ const AppNav = () => {
   useEffect(() => {
     getAppTheme();
     setMounted(true);
-  }, []);
+  }, [resolvedTheme]);
 
   return (
     <div
