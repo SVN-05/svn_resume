@@ -57,6 +57,11 @@ const SideDrawer = ({
                 transitionDuration: isOpen ? "0.7s" : "0.4s",
                 backgroundColor: bg,
                 fontWeight: currentTab ? "800" : "400",
+                color: isToggled
+                  ? colors.white
+                  : currentTab
+                  ? colors.white
+                  : colors.black,
               }}
               className="flex gap-x-5 items-center text-white justify-start ease-linear px-4 py-2 rounded-md font-semibold"
             >

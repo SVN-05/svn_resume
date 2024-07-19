@@ -23,16 +23,17 @@ const CertificateCard = ({
     >
       <div
         style={{ backgroundColor: logoBg }}
-        className="w-1/6 h-full flex flex-col items-center justify-center py-5"
+        className="w-2/6 h-full flex flex-col items-center justify-center py-5"
       >
         Logo
       </div>
       <div
         style={{ color: textColor }}
-        className="flex flex-col items-start py-5 ml-7 text-xs"
+        className="w-4/6 flex flex-col items-start py-5 ml-7 text-xs"
       >
         <p style={{ color: titleColor }} className="text-lg">
-          {title} <span className="text-xs opacity-70">By: {conducted_by}</span>
+          {title}
+          <br /> <span className="text-xs opacity-70">By: {conducted_by}</span>
         </p>
         <p>{project_name}</p>
         <p className="opacity-70">{date ?? "-"}</p>
