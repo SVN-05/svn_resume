@@ -198,7 +198,7 @@ export const projects = [
     ],
     icons: [IoLogoAndroid, FaAppStoreIos],
     project_name: "Voxguru",
-    des: "Cometchat is integrated, and you may share any form of content(Images, Audio, Video and documents ) from another app to my app. There is also a video compressor, an iOS actionsheet, an document, and other file download options in iOS. Finally, integrated media or any type of file picker and Push Notification.",
+    des: "Cometchat is integrated, and you may share any form of content(Images, Audio, Video and documents) from another app to my app. There is also a video compressor, an iOS actionsheet, an document, and other file download options in iOS. Finally, integrated media or any type of file picker and Push Notification.",
     para: [],
   },
   {

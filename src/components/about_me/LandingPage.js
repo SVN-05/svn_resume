@@ -6,6 +6,7 @@ import Skills from "./Skills";
 import Ide from "./Ide";
 import Projects from "./Projects";
 import { PageContext } from "@/context/context.provider";
+import ThirdParty from "./ThirdParty";
 
 const LandingPage = () => {
   const { isLandingLoaded, setIsLandingLoaded } = useContext(PageContext);
@@ -23,6 +24,7 @@ const LandingPage = () => {
       <Skills />
       <Ide />
       <Projects />
+      <ThirdParty />
     </main>
   );
 };

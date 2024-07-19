@@ -6,12 +6,16 @@ import { RiNextjsFill } from "react-icons/ri";
 import Title from "../micro/Title";
 import { PageContext } from "@/context/context.provider";
 import WhatIDoSkeleton from "../skeletons/landingPage/WhatIDoSkeleton";
-import { Wrap, WrapItem } from "@chakra-ui/react";
+import { useTheme } from "next-themes";
+import { colors } from "@/utils/constants/constants";
 
 const What_i_do = () => {
+  const { resolvedTheme } = useTheme();
   const { isLandingLoaded } = useContext(PageContext);
   const titlecolor = useAppStore((state) => state.titlecolor);
   const iconcolor = useAppStore((state) => state.iconcolor);
+  const isDarkMode = resolvedTheme === "dark";
+  const cardColor = isDarkMode ? colors.grey1 : colors.lightGreen2;
 
   const content = [
     {
@@ -29,14 +33,20 @@ const What_i_do = () => {
   return (
     <div className="w-full flex flex-col self-start mt-20">
       <Title text="What I Do" />
-      <div className="w-full flex flex-wrap mt-5 gap-x-16 gap-y-10">
+      <div className="w-full flex flex-wrap mt-5 gap-x-16 gap-y-5">
         {isLandingLoaded
           ? content.map((item) => {
               const Icon = item.icon;
               return (
                 <div
                   key={item?.des}
-                  className="flex items-start mt-5 lg:flex-1"
+                  style={{
+                    boxShadow: isDarkMode
+                      ? "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px"
+                      : "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+                    backgroundColor: cardColor,
+                  }}
+                  className="flex items-start mt-5 rounded-xl px-3 py-5 lg:flex-1"
                 >
                   <div width={50} height={50} className="mr-5">
                     <Icon size={40} color={iconcolor} />
