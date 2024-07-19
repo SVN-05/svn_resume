@@ -41,7 +41,7 @@ const LandingPage = () => {
         <a
           href="/contact"
           style={{ backgroundColor: btnColor }}
-          className="text-md font-medium rounded-md px-3 py-2"
+          className="text-md font-medium rounded-md px-3 py-2 text-white"
         >
           Contact me
         </a>
