@@ -8,7 +8,7 @@ import {
 } from "@/utils/constants/constants";
 import { getFirstletter } from "@/utils/helpers/methods";
 import useAppStore from "@/store/store";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import SideDrawer from "../SideDrawer";
@@ -48,6 +48,18 @@ const AppNav = () => {
     setMounted(true);
   }, [resolvedTheme]);
 
+  const handleDrawer = () => {
+    if (isOpen) {
+      setShowOverlay(!showOverlay);
+    }
+    setIsOpen(!isOpen);
+    if (isOpen === false) {
+      setTimeout(() => {
+        setShowOverlay(!showOverlay);
+      }, 400);
+    }
+  };
+
   return (
     <div
       style={{
@@ -85,20 +97,27 @@ const AppNav = () => {
         {mounted && (
           <ThemeSwitch isToggled={isToggled} handleToggle={handleAppTheme} />
         )}
+        <AiOutlineClose
+          size={20}
+          style={{
+            transform: isOpen ? "scaleY(1)" : "scaleY(0)",
+            opacity: isOpen ? 1 : 0,
+            filter: isOpen ? "blur(0px)" : "blur(10px)",
+            transitionDuration: "0.4s",
+          }}
+          className="ease-linear absolute right-5 md:hidden"
+          onClick={handleDrawer}
+        />
         <AiOutlineMenu
           size={20}
-          className="md:hidden"
-          onClick={() => {
-            if (isOpen) {
-              setShowOverlay(!showOverlay);
-            }
-            setIsOpen(!isOpen);
-            if (isOpen === false) {
-              setTimeout(() => {
-                setShowOverlay(!showOverlay);
-              }, 400);
-            }
+          style={{
+            transform: isOpen ? "scaleY(0)" : "scaleY(1)",
+            opacity: isOpen ? 0 : 1,
+            filter: isOpen ? "blur(10px)" : "blur(0px)",
+            transitionDuration: "0.7s",
           }}
+          className="ease-linear md:hidden"
+          onClick={handleDrawer}
         />
       </div>
       <SideDrawer
@@ -108,6 +127,7 @@ const AppNav = () => {
         setIsOpen={setIsOpen}
         showOverlay={showOverlay}
         setShowOverlay={setShowOverlay}
+        handleDrawer={handleDrawer}
       />
     </div>
   );

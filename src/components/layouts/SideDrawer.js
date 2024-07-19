@@ -11,6 +11,7 @@ const SideDrawer = ({
   setIsOpen,
   showOverlay,
   setShowOverlay,
+  handleDrawer = () => {},
 }) => {
   const pathName = usePathname();
   const navBarHeight = "64px";
@@ -27,7 +28,10 @@ const SideDrawer = ({
       }}
     >
       {showOverlay && (
-        <div className="z-10 w-full bg-black absolute top-0 right-0 bottom-0 left-0 opacity-50" />
+        <div
+          className="z-10 w-full bg-black absolute top-0 right-0 bottom-0 left-0 opacity-50"
+          onClick={handleDrawer}
+        />
       )}
       <div
         style={{
@@ -36,7 +40,7 @@ const SideDrawer = ({
             : "rgba(149, 157, 165, 0.2) 0px 8px 24px",
           backgroundColor: appBg,
         }}
-        className="flex flex-col z-20 gap-y-5 text-lg w-1/2 h-full self-end px-6 pt-6 rounded-tl-xl"
+        className="flex flex-col z-20 gap-y-5 text-lg max-w-[205px] h-full self-end px-6 pt-6 rounded-tl-xl"
       >
         {navBarOptions?.map((item2) => {
           const currentTab = pathName === item2?.link;
