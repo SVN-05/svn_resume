@@ -13,7 +13,7 @@ const PortfolioListContainer = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setFilteredData(projects?.reverse());
+      setFilteredData(projects);
       setIsPortfolioLoaded(!isPortfolioLoaded);
     }, 2000);
   }, []);
@@ -22,13 +22,11 @@ const PortfolioListContainer = () => {
     if (portfolioFilter === "All") {
       setFilteredData(projects);
     } else {
-      const fd = projects
-        ?.reverse()
-        ?.filter(
-          (item) =>
-            String(item?.filter)?.toLocaleLowerCase() ===
-            String(portfolioFilter)?.toLocaleLowerCase()
-        );
+      const fd = projects?.filter(
+        (item) =>
+          String(item?.filter)?.toLocaleLowerCase() ===
+          String(portfolioFilter)?.toLocaleLowerCase()
+      );
       setFilteredData(fd);
     }
   }, [portfolioFilter]);

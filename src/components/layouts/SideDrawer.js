@@ -50,6 +50,7 @@ const SideDrawer = ({
               ? colors.lightBlue3
               : colors.lightGreen2
             : "transparent";
+          const iconColor = currentTab ? iconcolor : colors.grey15;
 
           return (
             <div
@@ -69,7 +70,7 @@ const SideDrawer = ({
               }}
               className="flex gap-x-5 items-center capitalize text-white justify-start ease-linear px-4 py-2 rounded-md font-semibold"
             >
-              <Icon color={iconcolor} size={25} />
+              <Icon color={iconColor} size={25} />
               <a
                 href={item2?.link}
                 onClick={() => {
