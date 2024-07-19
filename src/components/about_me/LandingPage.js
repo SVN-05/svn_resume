@@ -7,9 +7,12 @@ import Ide from "./Ide";
 import Projects from "./Projects";
 import { PageContext } from "@/context/context.provider";
 import ThirdParty from "./ThirdParty";
+import useAppStore from "@/store/store";
 
 const LandingPage = () => {
   const { isLandingLoaded, setIsLandingLoaded } = useContext(PageContext);
+  const cardColor = useAppStore((state) => state.cardColor);
+  const btnColor = useAppStore((state) => state.iconcolor);
 
   useEffect(() => {
     setTimeout(() => {
@@ -25,6 +28,24 @@ const LandingPage = () => {
       <Ide />
       <Projects />
       <ThirdParty />
+      <div
+        style={{
+          backgroundColor: cardColor,
+          boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
+        }}
+        className="flex flex-col items-center mx-auto py-14 px-4 rounded-xl mt-20 gap-y-7 lg:w-5/6"
+      >
+        <h2 className="font-semibold text-xl text-center">
+          Do you have any projects in mind or an interest in employing me?
+        </h2>
+        <a
+          href="/contact"
+          style={{ backgroundColor: btnColor }}
+          className="text-md font-medium rounded-md px-3 py-2"
+        >
+          Contact me
+        </a>
+      </div>
     </main>
   );
 };

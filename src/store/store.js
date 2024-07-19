@@ -7,6 +7,7 @@ const useAppStore = create((set) => ({
   textcolor: colors.black,
   titlecolor: colors.grey1,
   iconcolor: colors.primary,
+  cardColor: colors.lightGreen2,
   portfolioFilter: "All",
   //   Action Functions
   changeAppTheme: () =>
@@ -16,6 +17,7 @@ const useAppStore = create((set) => ({
       textcolor: state.isDarkMode ? colors.black : colors.white,
       titlecolor: state.isDarkMode ? colors.grey1 : colors.white,
       iconcolor: state.isDarkMode ? colors.primary : colors.blue3,
+      cardColor: state.isDarkMode ? colors.lightGreen2 : colors.grey1,
     })),
   applyDarkTheme: () =>
     set((state) => ({
@@ -24,6 +26,7 @@ const useAppStore = create((set) => ({
       textcolor: colors.white,
       titlecolor: colors.white,
       iconcolor: colors.blue3,
+      cardColor: colors.grey1,
     })),
   applyLightTheme: () =>
     set((state) => ({
@@ -32,6 +35,7 @@ const useAppStore = create((set) => ({
       textcolor: colors.black,
       titlecolor: colors.grey1,
       iconcolor: colors.primary,
+      cardColor: colors.lightGreen2,
     })),
   setPortfolioFilter: (portfolioFilter) =>
     set(() => ({

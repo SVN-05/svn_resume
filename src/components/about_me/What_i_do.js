@@ -14,8 +14,8 @@ const What_i_do = () => {
   const { isLandingLoaded } = useContext(PageContext);
   const titlecolor = useAppStore((state) => state.titlecolor);
   const iconcolor = useAppStore((state) => state.iconcolor);
+  const cardColor = useAppStore((state) => state.cardColor);
   const isDarkMode = resolvedTheme === "dark";
-  const cardColor = isDarkMode ? colors.grey1 : colors.lightGreen2;
 
   const content = [
     {

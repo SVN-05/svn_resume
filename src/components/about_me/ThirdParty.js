@@ -19,7 +19,7 @@ const ThirdParty = () => {
 
   return (
     <div className="w-full flex flex-wrap items-start gap-x-16 gap-y-4 mt-20 pl-5 lg:justify-center">
-      <div className="border-2 h-60 w-full rounded-tl-2xl rounded-br-2xl mt-10 lg:h-80 lg:w-[45%]">
+      <div className="border-2 h-52 w-full rounded-tl-2xl rounded-br-2xl mt-10 lg:h-80 lg:w-[45%]">
         <Image
           width={0}
           height={0}
