@@ -15,7 +15,7 @@ const PortfolioCard = ({
   return (
     <a
       href={`/portfolio/${id}`}
-      className="portfolio-card-parent-div shadow-md cursor-pointer overflow-hidden flex flex-col items-start justify-between rounded-lg h-80 px-7 py-5"
+      className="portfolio-card-parent-div shadow-md cursor-pointer overflow-hidden flex flex-col items-start justify-between rounded-lg h-60 px-4 py-5 lg:px-7 lg:h-80"
     >
       <div
         style={{ backgroundImage: `url(/${imageName})` }}

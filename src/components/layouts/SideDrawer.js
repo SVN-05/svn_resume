@@ -67,7 +67,7 @@ const SideDrawer = ({
                   ? colors.white
                   : colors.black,
               }}
-              className="flex gap-x-5 items-center text-white justify-start ease-linear px-4 py-2 rounded-md font-semibold"
+              className="flex gap-x-5 items-center capitalize text-white justify-start ease-linear px-4 py-2 rounded-md font-semibold"
             >
               <Icon color={iconcolor} size={25} />
               <a

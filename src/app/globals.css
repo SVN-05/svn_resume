@@ -63,13 +63,15 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.portfolio-card-child-div {
-  opacity: 0;
-  transition: all 0.3s ease-in-out;
-}
+@media (min-width: 1024px) {
+  .portfolio-card-child-div {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
 
-.portfolio-card-parent-div:hover .portfolio-card-child-div {
-  opacity: 1;
+  .portfolio-card-parent-div:hover .portfolio-card-child-div {
+    opacity: 1;
+  }
 }
 
 .parent-div {

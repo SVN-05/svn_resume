@@ -84,11 +84,11 @@ const AppNav = () => {
             <a
               key={item?.text}
               href={item?.link}
-              style={{
-                fontWeight: currentTab ? "bold" : 400,
-                fontSize: currentTab ? 15 : 14,
-              }}
-              className="hidden cursor-pointer capitalize hover:underline underline-offset-8 md:flex"
+              className={`hidden cursor-pointer capitalize underline-offset-8 md:flex ${
+                currentTab
+                  ? "font-bold text-[15px]"
+                  : "font-normal text-[13px] hover:underline"
+              }`}
             >
               {item?.text}
             </a>
@@ -114,7 +114,7 @@ const AppNav = () => {
             transform: isOpen ? "scaleY(0)" : "scaleY(1)",
             opacity: isOpen ? 0 : 1,
             filter: isOpen ? "blur(10px)" : "blur(0px)",
-            transitionDuration: "0.7s",
+            transitionDuration: isOpen ? "0.5s" : "0.3s",
           }}
           className="ease-linear md:hidden"
           onClick={handleDrawer}
