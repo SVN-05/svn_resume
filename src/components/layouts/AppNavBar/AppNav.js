@@ -88,7 +88,7 @@ const AppNav = () => {
                 fontWeight: currentTab ? "bold" : 400,
                 fontSize: currentTab ? 15 : 14,
               }}
-              className="hidden cursor-pointer hover:underline underline-offset-8 md:flex"
+              className="hidden cursor-pointer capitalize hover:underline underline-offset-8 md:flex"
             >
               {item?.text}
             </a>

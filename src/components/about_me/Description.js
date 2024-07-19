@@ -68,7 +68,7 @@ const Description = () => {
             <FaLinkedin size={30} color={colors.blue4} />
           </a>
           <a
-            href={`mailto:${contactDetails.gmail}`}
+            href={`/contact`}
             // target="_blank"
             className="cursor-pointer"
           >

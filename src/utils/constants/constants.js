@@ -47,11 +47,11 @@ export const contactDetails = {
 };
 
 export const navBarOptions = [
-  { text: "About Me", link: "/", icon: HiUserCircle },
-  { text: "Resume", link: "/resume", icon: SiReactiveresume },
-  { text: "Portfolio", link: "/portfolio", icon: IoFileTrayFull },
-  { text: "Contact", link: "/contact", icon: RiContactsFill },
-  { text: "Extras", link: "/extracomponents", icon: ImBook },
+  { text: "about me", link: "/", icon: HiUserCircle },
+  { text: "resume", link: "/resume", icon: SiReactiveresume },
+  { text: "portfolio", link: "/portfolio", icon: IoFileTrayFull },
+  { text: "extras", link: "/extracomponents", icon: ImBook },
+  { text: "contact", link: "/contact", icon: RiContactsFill },
 ];
 
 export const resume = {
