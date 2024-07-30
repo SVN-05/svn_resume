@@ -1,0 +1,54 @@
+{
+  "invoices": [
+    {
+      "id": 1,
+      "product": "Washing Machine 6 Kgs",
+      "hsn_code": 997323,
+      "no_of_units": 1,
+      "rate_unit": 700.0,
+      "cgst": 63.0,
+      "sgst": 63.0,
+      "total": 826.0
+    },
+    {
+      "id": 2,
+      "product": "Refrigerator 190 L",
+      "hsn_code": 997324,
+      "no_of_units": 1,
+      "rate_unit": 600.0,
+      "cgst": 54.0,
+      "sgst": 54.0,
+      "total": 708.0
+    },
+    {
+      "id": 3,
+      "product": "Air Conditioner 1 Ton",
+      "hsn_code": 997325,
+      "no_of_units": 1,
+      "rate_unit": 1600.0,
+      "cgst": 224.0,
+      "sgst": 224.0,
+      "total": 2048.0
+    },
+    {
+      "id": 4,
+      "product": "Wooden Cot Queen Size",
+      "hsn_code": 997326,
+      "no_of_units": 1,
+      "rate_unit": 700.0,
+      "cgst": 63.0,
+      "sgst": 63.0,
+      "total": 826.0
+    },
+    {
+      "id": 5,
+      "product": "Wooden Cot Queen Size",
+      "hsn_code": 997326,
+      "no_of_units": 1,
+      "rate_unit": 700.0,
+      "cgst": 63.0,
+      "sgst": 63.0,
+      "total": 826.0
+    }
+  ]
+}
