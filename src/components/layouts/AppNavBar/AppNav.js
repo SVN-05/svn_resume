@@ -6,7 +6,7 @@ import {
   navBarOptions,
   userDetails,
 } from "@/utils/constants/constants";
-import { getFirstletter } from "@/utils/helpers/methods";
+import { formatDateTime, getFirstletter } from "@/utils/helpers/methods";
 import useAppStore from "@/store/store";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useTheme } from "next-themes";
@@ -25,6 +25,7 @@ const AppNav = () => {
   const applyDarkTheme = useAppStore((state) => state.applyDarkTheme);
   const [isOpen, setIsOpen] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
+  const [dateTime, setDateTime] = useState({});
 
   const handleAppTheme = () => {
     if (resolvedTheme === "light") {
@@ -47,6 +48,18 @@ const AppNav = () => {
     getAppTheme();
     setMounted(true);
   }, [resolvedTheme]);
+
+  useEffect(() => {
+    const updateDateTime = () => {
+      const value = formatDateTime();
+      setDateTime(value);
+    };
+
+    updateDateTime();
+    const intervalId = setInterval(updateDateTime, 5000); // Update every minute
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   const handleDrawer = () => {
     if (isOpen) {
@@ -129,6 +142,9 @@ const AppNav = () => {
         setShowOverlay={setShowOverlay}
         handleDrawer={handleDrawer}
       />
+      <p className="hidden lg:flex items-center gap-10 font-medium transition-all duration-300">
+        {dateTime?.date} <span>{dateTime?.time}</span>
+      </p>
     </div>
   );
 };
