@@ -12,7 +12,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import SideDrawer from "../SideDrawer";
-import { motion, useScroll, useSpring } from "framer-motion";
+import PageProgress from "../PageProgress";
 
 const AppNav = () => {
   const pathName = usePathname();
@@ -24,16 +24,9 @@ const AppNav = () => {
   const changeAppTheme = useAppStore((state) => state.changeAppTheme);
   const applyLightTheme = useAppStore((state) => state.applyLightTheme);
   const applyDarkTheme = useAppStore((state) => state.applyDarkTheme);
-  const iconcolor = useAppStore((state) => state.iconcolor);
   const [isOpen, setIsOpen] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
   const [dateTime, setDateTime] = useState({});
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
 
   const handleAppTheme = () => {
     if (resolvedTheme === "light") {
@@ -90,14 +83,7 @@ const AppNav = () => {
       }}
       className="w-full sticky top-0 flex flex-col items-start"
     >
-      <motion.div
-        style={{
-          scaleX,
-          height: "5px",
-          background: iconcolor,
-        }}
-        className="absolute left-0 top-0 right-0 origin-left"
-      />
+      <PageProgress />
       <div className="w-full flex flex-wrap items-center justify-between py-5 px-5 lg:px-16">
         <div className="flex items-center gap-x-3 text-xl">
           <p
