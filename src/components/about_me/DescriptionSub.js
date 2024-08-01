@@ -35,12 +35,13 @@ const DescriptionSub = () => {
       <div
         width={256}
         height={256}
-        style={{ background: circleBg, transform }}
+        style={{ background: circleBg }}
         className="w-64 h-64 rounded-full flex flex-col items-center justify-center shadow-type1 xl:w-96 xl:h-96"
       >
         <FaUserSecret
           size={window?.innerWidth < 640 ? 150 : 190}
           color={iconColor}
+          style={{ transform }}
         />
       </div>
       <div className="flex flex-col items-center md:items-start md:w-1/2">

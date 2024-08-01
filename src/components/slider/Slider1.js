@@ -98,6 +98,7 @@ const Slider1 = ({ data = [], perView = 3, spacing = 15 }) => {
                       height={0}
                       className="w-[200px] h-20"
                       src={item?.icon?.[0]}
+                      alt="Icon"
                     />
                   ) : (
                     item?.icon?.map((item2) => {

@@ -24,6 +24,7 @@ const ThirdParty = () => {
           width={0}
           height={0}
           src={thirdParty}
+          alt="Third Party"
           className="w-[98%] h-[99%] rounded-tl-2xl rounded-br-2xl -ml-5 -mt-7"
         />
       </div>
@@ -35,7 +36,12 @@ const ThirdParty = () => {
             return (
               <div key={index} className="flex items-center capitalize gap-x-4">
                 {item?.isImage ? (
-                  <Image width={iconSize} height={iconSize} src={item?.icon} />
+                  <Image
+                    alt="Icon"
+                    width={iconSize}
+                    height={iconSize}
+                    src={item?.icon}
+                  />
                 ) : (
                   <Icon size={iconSize} color={iconcolor} />
                 )}

@@ -74,6 +74,7 @@ const Slider2 = ({ data = [] }) => {
               width={0}
               height={0}
               key={index}
+              alt="Logo's"
               src={require(`../../../public/${item}`)}
               className="keen-slider__slide w-full object-cover"
             />
