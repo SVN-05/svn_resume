@@ -8,6 +8,7 @@ import Projects from "./Projects";
 import { PageContext } from "@/context/context.provider";
 import ThirdParty from "./ThirdParty";
 import useAppStore from "@/store/store";
+import LandingPageV2 from "./LandingPageV2";
 
 const LandingPage = () => {
   const { isLandingLoaded, setIsLandingLoaded } = useContext(PageContext);
@@ -22,6 +23,7 @@ const LandingPage = () => {
 
   return (
     <main className="flex flex-col items-center p-10 items-center overflow-hidden lg:items-start pb-32">
+      <LandingPageV2 />
       <Description />
       <What_i_do />
       <Skills />

@@ -35,13 +35,12 @@ const DescriptionSub = () => {
       <div
         width={256}
         height={256}
-        style={{ background: circleBg }}
+        style={{ background: circleBg, transform }}
         className="w-64 h-64 rounded-full flex flex-col items-center justify-center shadow-type1 xl:w-96 xl:h-96"
       >
         <FaUserSecret
           size={window?.innerWidth < 640 ? 150 : 190}
           color={iconColor}
-          style={{ transform }}
         />
       </div>
       <div className="flex flex-col items-center md:items-start md:w-1/2">
@@ -60,14 +59,14 @@ const DescriptionSub = () => {
           <a
             href={hyperLinks.linkedin}
             targeth="_blank"
-            className="bg-white cursor-pointer"
+            className="bg-white cursor-pointer transform-all duration-300 ease-in-out hover:scale-110"
           >
             <FaLinkedin size={30} color={colors.blue4} />
           </a>
           <a
             href={`/contact`}
             // target="_blank"
-            className="cursor-pointer"
+            className="cursor-pointer transform-all duration-300 ease-in-out hover:scale-110"
           >
             <Image
               className=""
@@ -77,7 +76,11 @@ const DescriptionSub = () => {
               height={36}
             />
           </a>
-          <a href="https://github.com/SVN-05" target="_blank">
+          <a
+            href="https://github.com/SVN-05"
+            target="_blank"
+            className="transform-all duration-300 ease-in-out hover:scale-110"
+          >
             <FaGithubSquare size={30} />
           </a>
         </div>

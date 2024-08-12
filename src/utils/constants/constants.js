@@ -6,9 +6,11 @@ import {
   RiNextjsFill,
   RiJavascriptFill,
   RiTailwindCssFill,
+  RiNpmjsFill,
+  RiContactsFill,
 } from "react-icons/ri";
 import { BiLogoTypescript } from "react-icons/bi";
-import { FaJava } from "react-icons/fa6";
+import { FaJava, FaReact } from "react-icons/fa6";
 import {
   FaServer,
   FaAppStoreIos,
@@ -16,19 +18,39 @@ import {
   FaVestPatches,
 } from "react-icons/fa";
 import { CgWebsite } from "react-icons/cg";
-import { SiAndroidstudio, SiXcode, SiReactiveresume } from "react-icons/si";
+import {
+  SiAndroidstudio,
+  SiXcode,
+  SiReactiveresume,
+  SiChakraui,
+  SiNotion,
+} from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { TbBrandRedux } from "react-icons/tb";
-import { bear } from "../ImageIndex";
+import { bear, cometChat, figmaSvg } from "../ImageIndex";
 import { CiMobile3 } from "react-icons/ci";
 import { HiUserCircle } from "react-icons/hi";
-import { RiContactsFill } from "react-icons/ri";
 import { ImBook } from "react-icons/im";
-import { IoFileTrayFull } from "react-icons/io5";
+import { IoFileTrayFull, IoLogoFirebase } from "react-icons/io5";
 
 export const colors = theme.extend.colors;
 export const array3 = [1, 2, 3];
 export const skeletonLineHeight = "12px";
+
+export const LandingPageIconSection = {
+  box1: [
+    { src: RiNpmjsFill, color: colors.red },
+    { isImage: true, src: figmaSvg },
+    { isImage: true, src: cometChat },
+    { src: IoLogoFirebase, color: colors.firebase },
+  ],
+  box2: [
+    { src: SiAndroidstudio, color: colors.green1 },
+    { src: SiXcode, color: colors.blue5 },
+    { src: VscVscode, color: colors.blue6, bg: colors.white },
+    { src: SiNotion, color: colors.white },
+  ],
+};
 
 export const userDetails = {
   firstName: "Nagaraj",

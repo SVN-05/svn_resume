@@ -20,12 +20,15 @@ module.exports = {
       colors: {
         primary: "#6fc276",
         lightGreen: "#92d198",
+        green1: "#A4C369",
         yellow1: "#FFD301",
         yellow2: "#FFB921",
         blue1: "#1497D4",
         blue2: "#0047AC",
         blue3: "#007ced",
         blue4: "#0077B5",
+        blue5: "#007AFF",
+        blue6: "#0078d7",
         grey1: "#333333",
         grey2: "#F5F5F5",
         grey3: "#AAA",
@@ -52,6 +55,7 @@ module.exports = {
         red: "#dc3545",
         lightBlue3: "#BBDEFF",
         lightGreen2: "#C9E8CB",
+        firebase: "#FFCA28",
       },
       keyframes: {
         enterFromRight: {

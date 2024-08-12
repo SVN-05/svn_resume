@@ -74,6 +74,38 @@ const AppNav = () => {
     }
   };
 
+  const ToggleButtons = ({ className = "" }) => {
+    return (
+      <div className={`items-center gap-x-5 ${className}`}>
+        {mounted && (
+          <ThemeSwitch isToggled={isToggled} handleToggle={handleAppTheme} />
+        )}
+        <AiOutlineClose
+          size={20}
+          style={{
+            transform: isOpen ? "scaleY(1)" : "scaleY(0)",
+            opacity: isOpen ? 1 : 0,
+            filter: isOpen ? "blur(0px)" : "blur(10px)",
+            transitionDuration: "0.4s",
+          }}
+          className="ease-linear absolute right-5 md:hidden"
+          onClick={handleDrawer}
+        />
+        <AiOutlineMenu
+          size={20}
+          style={{
+            transform: isOpen ? "scaleY(0)" : "scaleY(1)",
+            opacity: isOpen ? 0 : 1,
+            filter: isOpen ? "blur(10px)" : "blur(0px)",
+            transitionDuration: isOpen ? "0.5s" : "0.3s",
+          }}
+          className="ease-linear md:hidden"
+          onClick={handleDrawer}
+        />
+      </div>
+    );
+  };
+
   return (
     <div
       style={{
@@ -85,16 +117,12 @@ const AppNav = () => {
     >
       <PageProgress />
       <div className="w-full flex flex-wrap items-center justify-between py-5 px-5 lg:px-16">
-        <div className="flex items-center gap-x-3 text-xl">
+        <div className="flex items-center gap-x-5 tracking-normal transform-all duration-500 md:gap-x-10">
           <p
             className={`bg-primary py-1 px-3 rounded-full font-bold text-white`}
           >
             {initial}
           </p>
-          <span className="font-semibold">{userDetails?.firstName}</span>{" "}
-          {userDetails?.lastName}
-        </div>
-        <div className="flex items-center gap-x-5 tracking-normal transform-all duration-500 md:gap-x-14">
           {navBarOptions?.map((item) => {
             const currentTab = pathName === item?.link;
 
@@ -112,31 +140,7 @@ const AppNav = () => {
               </a>
             );
           })}
-          {mounted && (
-            <ThemeSwitch isToggled={isToggled} handleToggle={handleAppTheme} />
-          )}
-          <AiOutlineClose
-            size={20}
-            style={{
-              transform: isOpen ? "scaleY(1)" : "scaleY(0)",
-              opacity: isOpen ? 1 : 0,
-              filter: isOpen ? "blur(0px)" : "blur(10px)",
-              transitionDuration: "0.4s",
-            }}
-            className="ease-linear absolute right-5 md:hidden"
-            onClick={handleDrawer}
-          />
-          <AiOutlineMenu
-            size={20}
-            style={{
-              transform: isOpen ? "scaleY(0)" : "scaleY(1)",
-              opacity: isOpen ? 0 : 1,
-              filter: isOpen ? "blur(10px)" : "blur(0px)",
-              transitionDuration: isOpen ? "0.5s" : "0.3s",
-            }}
-            className="ease-linear md:hidden"
-            onClick={handleDrawer}
-          />
+          <ToggleButtons className="hidden lg:flex" />
         </div>
         <SideDrawer
           isToggled={isToggled}
@@ -147,6 +151,7 @@ const AppNav = () => {
           setShowOverlay={setShowOverlay}
           handleDrawer={handleDrawer}
         />
+        <ToggleButtons className="flex lg:hidden" />
         <p className="hidden lg:flex items-center gap-10 font-medium transition-all duration-300">
           {dateTime?.date} <span>{dateTime?.time}</span>
         </p>
