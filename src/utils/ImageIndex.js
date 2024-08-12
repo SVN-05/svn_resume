@@ -10,7 +10,7 @@ import monitor from "../../public/monitor.png";
 import miniTable from "../../public/mini-table.png";
 import ball from "../../public/ball.png";
 import mobileDev from "../../public/mobile-dev.jpg";
-import avatar from "../../public/avatar.png";
+import avatar from "../../public/avatar.svg";
 
 export {
   gmail,

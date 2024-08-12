@@ -31,7 +31,7 @@ const Section1 = () => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="flex flex-col items-center absolute top-24 z-0">
+      <div className="flex flex-col items-center z-0 lg:absolute lg:top-24">
         <p className="text-3xl font-semibold leading-normal bg-gradient-to-b from-white to-grey1 bg-clip-text text-transparent lg:text-[48px]">
           Nagaraj S V
         </p>
@@ -39,103 +39,19 @@ const Section1 = () => {
           Front-End Developer, Node Js
         </p>
       </div>
-      {/* <div className="flex flex-col gap-y-4 absolute items-center mt-[180px] z-20 flex-1">
-        <div className="flex flex-col items-center gap-y-5">
-          <div className="flex items-start gap-x-10">
-            {data?.map((item, index) => {
-              return (
-                <div className="flex flex-col gap-y-4 items-start">
-                  {item?.top?.length > 0 && (
-                    <div
-                      key={index}
-                      className={`${item?.className} w-full p-2 bg-black shadow-md rounded-md flex items-center justify-center gap-x-4 transform-all duration-300 hover:scale-110`}
-                    >
-                      {item?.top?.map((item2, index2) => {
-                        const bg = item2?.bg ?? "transparent";
-                        const Icon = item2?.src;
-                        const className = item2?.bg ? "rounded p-[1px]" : "";
-                        return item2?.isImage ? (
-                          <Image
-                            key={index2}
-                            width={0}
-                            height={0}
-                            src={item2?.src}
-                            className="w-[10px] h-[10px] lg:w-[30px] lg:h-[30px]"
-                          />
-                        ) : (
-                          <Icon
-                            key={index2}
-                            size={0}
-                            color={item2?.color}
-                            className={`w-[10px] h-[10px] lg:w-[30px] lg:h-[30px] ${className}`}
-                            style={{ backgroundColor: bg }}
-                          />
-                        );
-                      })}
-                    </div>
-                  )}
-                  <div
-                    className={`${item?.className} w-24 h-14 px-3 pb-3 pt-7 rounded-md bg-black shadow-md transform-all duration-300 lg:w-52 lg:h-36 hover:scale-110`}
-                  >
-                    <Image
-                      width={0}
-                      height={0}
-                      className="w-full h-full rounded"
-                      src={item?.bottom}
-                    />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <div className="w-full flex items-end justify-between gap-x-3 pt-6">
-            <div className="flex flex-col items-center">
-              <Image
-                width={0}
-                height={0}
-                className="w-40 h-40 transform-all duration-300 scale-105 hover:scale-110"
-                src={monitor}
-              />
-              <Image
-                width={0}
-                height={0}
-                className="w-10 -mt-[186px] lg:w-72 lg:h-72"
-                src={table}
-              />
-            </div>
-            <Image
-              width={0}
-              height={0}
-              src={avatar}
-              className="w-auto lg:hidden"
-            />
-            <Flex alignItems={"baseline"} className="gap-x-7">
-              <Image
-                width={0}
-                height={0}
-                src={ball}
-                className="w-4 transform-all duration-300 lg:w-16 hover:scale-110"
-              />
-              <Image
-                width={0}
-                height={0}
-                src={miniTable}
-                className="w-10 lg:w-auto"
-              />
-            </Flex>
-          </div>
-        </div>
-      </div> */}
-      <div className="w-full flex flex-col gap-y-4 items-center max-w-[900px] px-2 lg:px-0">
+      <div className="w-full z-20 flex flex-col gap-y-4 items-center max-w-[900px] px-2 mt-11 lg:px-0 lg:mt-24 lg:absolute">
         <div className="flex items-start justify-between gap-x-5 lg:gap-x-4">
           {data?.map((item, index) => {
             const parentClassName =
               "bg-black shadow-md rounded-md transform-all duration-300 hover:scale-110";
             return (
-              <div key={index} className="flex-1 flex flex-col gap-y-2">
+              <div
+                key={index}
+                className="flex-1 flex flex-col gap-y-2 items-center"
+              >
                 {index !== 1 && (
                   <div
-                    className={`flex p-2 items-center justify-evenly gap-x-3 ${parentClassName} ${item?.className}`}
+                    className={`w-4/6 flex p-2 items-center justify-between gap-x-3 ${parentClassName} ${item?.className} lg:p-3`}
                   >
                     {item?.top?.map((item2, index2) => {
                       const bg = item2?.bg ?? "transparent";
@@ -168,32 +84,47 @@ const Section1 = () => {
                     src={item?.bottom}
                     width={"100%"}
                     height={"100%"}
-                    className="rounded-md"
+                    className="rounded-md "
                   />
                 </div>
               </div>
             );
           })}
         </div>
-        <div className="flex items-end justify-between">
-          <div className="flex-1 flex flex-col items-center">
+        <div className="flex items-end justify-between gap-x-3 lg:gap-x-20">
+          <div className="flex-1 flex flex-col items-center relative">
             <Image
               width={0}
               height={0}
               src={monitor}
-              className="w-full h-[50px]"
+              className="w-[70%] absolute -top-3 transform-all duration-300 scale-105 hover:scale-110 lg:top-7 lg:max-w-40 lg:h-40"
             />
             <Image
               width={0}
               height={0}
               src={table}
-              className="w-full h-[50px]"
+              className="w-full lg:w-72 lg:h-72"
             />
           </div>
-          <Image width={0} height={0} src={avatar} className="" />
-          <div className="flex items-end justify-evenly gap-x-3">
-            <Image width={0} height={0} src={ball} className="" />
-            <Image width={0} height={0} src={miniTable} className="" />
+          <Image
+            width={0}
+            height={0}
+            src={avatar}
+            className="w-[100px] h-[140px] lg:opacity-0"
+          />
+          <div className="flex-1 flex items-end justify-evenly gap-x-3">
+            <Image
+              width={0}
+              height={0}
+              src={ball}
+              className="w-[30px] h-[30px] transform-all duration-300 lg:w-16 lg:h-auto hover:scale-110"
+            />
+            <Image
+              width={0}
+              height={0}
+              src={miniTable}
+              className="flex-1 h-[50px] lg:w-auto lg:h-auto"
+            />
           </div>
         </div>
       </div>
