@@ -12,8 +12,11 @@ import {
   thirdParty,
 } from "@/utils/ImageIndex";
 import { LandingPageIconSection } from "@/utils/constants/constants";
+import useAppStore from "@/store/store";
 
 const Section1 = () => {
+  const isDarkMode = useAppStore((state) => state.isDarkMode);
+  const cardBg = isDarkMode ? "bg-black" : "bg-grey1";
   const data = [
     {
       top: LandingPageIconSection?.box1,
@@ -31,7 +34,13 @@ const Section1 = () => {
   return (
     <div className="flex flex-col items-center pt-20 lg:h-screen lg:pt-0 lg:justify-center">
       <div className="flex flex-col items-center z-0 lg:absolute lg:top-24">
-        <p className="text-3xl font-semibold leading-normal bg-gradient-to-b from-white to-grey1 bg-clip-text text-transparent lg:text-[48px]">
+        <p
+          className={`bg-gradient-to-b ${
+            isDarkMode
+              ? "from-white to-grey1"
+              : " from-black via-grey7 to-grey7"
+          } text-3xl font-semibold leading-normal bg-clip-text text-transparent lg:text-[48px]`}
+        >
           Nagaraj S V
         </p>
         <p className="text-xl font-normal text-grey7 lg:text-2xl">
@@ -41,8 +50,7 @@ const Section1 = () => {
       <div className="w-full z-20 flex flex-col gap-y-4 items-center max-w-[900px] mt-11 lg:gap-y-10 lg:mt-24 lg:absolute">
         <div className="flex items-start justify-between gap-x-5 lg:gap-x-6">
           {data?.map((item, index) => {
-            const parentClassName =
-              "bg-black shadow-md rounded transform-all duration-300 hover:scale-110 lg:rounded-md";
+            const parentClassName = `${cardBg} shadow-md rounded transform-all duration-300 hover:scale-110 lg:rounded-md`;
             return (
               <div
                 key={index}

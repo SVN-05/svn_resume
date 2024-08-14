@@ -6,6 +6,8 @@ import useAppStore from "@/store/store";
 
 const ElevateCard = ({ no, title, subTitle, des, image, icons }) => {
   const iconcolor = useAppStore((state) => state.iconcolor);
+  const isDarkMode = useAppStore((state) => state.isDarkMode);
+  const cardBg = isDarkMode ? "bg-black" : "bg-grey1";
   const scrollRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: scrollRef,
@@ -15,7 +17,7 @@ const ElevateCard = ({ no, title, subTitle, des, image, icons }) => {
     <motion.div
       ref={scrollRef}
       style={{ scale: scrollYProgress, opacity: scrollYProgress }}
-      className="w-full relative overflow-hidden rounded-lg flex flex-col bg-black items-start transition-all ease-in-out hover:shadow-lg hover:scale-115 pt-5 lg:pt-7 gap-y-10"
+      className={`w-full text-white relative overflow-hidden rounded-lg flex flex-col items-start transition-all ease-in-out hover:shadow-lg hover:scale-115 pt-5 lg:pt-7 gap-y-10 ${cardBg}`}
     >
       <div className="w-full flex items-center justify-between px-5 lg:px-10">
         <p className="font-medium text-sm lg:text-lg">

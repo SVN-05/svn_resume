@@ -4,12 +4,15 @@ import React from "react";
 
 const InfoCard = ({ bgImage, title, des, parentClassName }) => {
   const textColor = useAppStore((state) => state.iconcolor);
+  const appBg = useAppStore((state) => state.appBg);
 
   return (
     <div
       className={`w-full h-full flex flex-col relative items-center overflow-hidden rounded-br-lg rounded-bl-lg transition-all duration-300 ease-in-out ${parentClassName}`}
     >
-      <div className="flex flex-col rounded-lg w-full h-full p-4 justify-end relative overflow-hidden border-white border-[1px] border-solid">
+      <div
+        className={`flex flex-col rounded-lg w-full h-full p-4 justify-end relative overflow-hidden border-[1px] border-solid border-${appBg}`}
+      >
         <Image
           src={bgImage}
           width={0}
@@ -23,7 +26,7 @@ const InfoCard = ({ bgImage, title, des, parentClassName }) => {
           >
             {title}
           </p>
-          <p className="w-5/6 font-medium line-clamp-1">{des}</p>
+          <p className="w-5/6 font-medium line-clamp-1 text-white">{des}</p>
         </div>
       </div>
       <div className="w-full h-2/6 bg-gradient-to-t from-black absolute bottom-0" />
