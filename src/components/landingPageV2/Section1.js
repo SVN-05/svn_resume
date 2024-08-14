@@ -12,7 +12,6 @@ import {
   thirdParty,
 } from "@/utils/ImageIndex";
 import { LandingPageIconSection } from "@/utils/constants/constants";
-import { Flex } from "@chakra-ui/react";
 
 const Section1 = () => {
   const data = [
@@ -30,7 +29,7 @@ const Section1 = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center pt-20 lg:h-screen lg:pt-0 lg:justify-center">
       <div className="flex flex-col items-center z-0 lg:absolute lg:top-24">
         <p className="text-3xl font-semibold leading-normal bg-gradient-to-b from-white to-grey1 bg-clip-text text-transparent lg:text-[48px]">
           Nagaraj S V
@@ -39,19 +38,19 @@ const Section1 = () => {
           Front-End Developer, Node Js
         </p>
       </div>
-      <div className="w-full z-20 flex flex-col gap-y-4 items-center max-w-[900px] px-2 mt-11 lg:px-0 lg:mt-24 lg:absolute">
-        <div className="flex items-start justify-between gap-x-5 lg:gap-x-4">
+      <div className="w-full z-20 flex flex-col gap-y-4 items-center max-w-[900px] mt-11 lg:gap-y-10 lg:mt-24 lg:absolute">
+        <div className="flex items-start justify-between gap-x-5 lg:gap-x-6">
           {data?.map((item, index) => {
             const parentClassName =
-              "bg-black shadow-md rounded-md transform-all duration-300 hover:scale-110";
+              "bg-black shadow-md rounded transform-all duration-300 hover:scale-110 lg:rounded-md";
             return (
               <div
                 key={index}
-                className="flex-1 flex flex-col gap-y-2 items-center"
+                className="flex-1 flex flex-col gap-y-2 items-center lg:gap-y-4"
               >
                 {index !== 1 && (
                   <div
-                    className={`w-4/6 flex p-2 items-center justify-between gap-x-3 ${parentClassName} ${item?.className} lg:p-3`}
+                    className={`flex p-2 items-center justify-between gap-x-3 ${parentClassName} ${item?.className} lg:w-4/6 lg:p-3`}
                   >
                     {item?.top?.map((item2, index2) => {
                       const bg = item2?.bg ?? "transparent";
@@ -84,7 +83,7 @@ const Section1 = () => {
                     src={item?.bottom}
                     width={"100%"}
                     height={"100%"}
-                    className="rounded-md "
+                    className="rounded lg:rounded-md lg:max-h-[140px]"
                   />
                 </div>
               </div>

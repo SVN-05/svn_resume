@@ -27,7 +27,20 @@ import {
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { TbBrandRedux } from "react-icons/tb";
-import { bear, cometChat, figmaSvg } from "../ImageIndex";
+import {
+  androidStudio,
+  bear,
+  cometChat,
+  figmaSvg,
+  hoti,
+  notion,
+  trulivMobile,
+  trulivTab,
+  voxguru,
+  voxguruMobile,
+  vscode,
+  xcode,
+} from "../ImageIndex";
 import { CiMobile3 } from "react-icons/ci";
 import { HiUserCircle } from "react-icons/hi";
 import { ImBook } from "react-icons/im";
@@ -105,6 +118,64 @@ export const ide_content = [
   { icon: SiAndroidstudio, title: "Android Studio" },
   { icon: VscVscode, title: "Visual Studio Code" },
   { icon: SiXcode, title: "Xcode" },
+];
+
+export const ide_content_new = [
+  {
+    bg: androidStudio,
+    title: "Android Studio",
+    des: "Developed apps using it in Java language.",
+    rotate: -25,
+  },
+  {
+    bg: vscode,
+    title: "VSCode",
+    des: "Used as an editor tool for React Native.",
+    rotate: 25,
+  },
+  {
+    bg: xcode,
+    title: "XCode",
+    des: "Developed iOS apps using it in Js Language.",
+    rotate: -15,
+  },
+  {
+    bg: notion,
+    title: "Notion",
+    des: "Used as an notes taking tool.",
+    rotate: 15,
+  },
+];
+
+export const project_list = [
+  {
+    title: "VOXGURU",
+    subtitle: "Mobile App",
+    des: `Focused on Bug Fixes, implemented "Comet Chat" and handled file sharing from other apps to voxguru app.`,
+    image: voxguru,
+    icons: [IoLogoAndroid, FaAppStoreIos],
+  },
+  {
+    title: "HOTI",
+    subtitle: "Mobile App",
+    des: "Developed this project from scratch using react native, creating reusable components, and keeping the codebase clean and tidy.",
+    image: hoti,
+    icons: [IoLogoAndroid],
+  },
+  {
+    title: "TRULIV",
+    subtitle: "Web App",
+    des: "An innovative business tool that helps you locate affordable places to stay in Chennai and Bangalore.",
+    image: trulivTab,
+    icons: [RiNextjsFill],
+  },
+  {
+    title: "TRULIV",
+    subtitle: "Mobile App",
+    des: "An dedicated mobile-friendly version of their website, in order to reach a larger audience base via mobile platforms. Easy to utilise at convenient times.",
+    image: trulivMobile,
+    icons: [IoLogoAndroid, FaAppStoreIos],
+  },
 ];
 
 export const project_content = [
