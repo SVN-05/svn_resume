@@ -117,7 +117,7 @@ const AppNav = () => {
     >
       <PageProgress />
       <div className="w-full flex flex-wrap items-center justify-between py-5 px-5 lg:px-16">
-        <div className="flex items-center gap-x-5 tracking-normal transform-all duration-500 md:gap-x-10">
+        <div className="flex items-center gap-x-5 tracking-normal transition-all duration-500 md:gap-x-10">
           <p
             className={`bg-primary py-1 px-3 rounded-full font-bold text-white`}
           >

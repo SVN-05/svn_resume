@@ -4,7 +4,7 @@ import { motion, useScroll } from "framer-motion";
 import Image from "next/image";
 import useAppStore from "@/store/store";
 
-const ElevateCard = ({ no, title, subTitle, des, image, icons }) => {
+const ElevateCard = ({ no, title, subTitle, des, image, icons, linkId }) => {
   const iconcolor = useAppStore((state) => state.iconcolor);
   const isDarkMode = useAppStore((state) => state.isDarkMode);
   const cardBg = isDarkMode ? "bg-black" : "bg-grey1";
@@ -13,11 +13,13 @@ const ElevateCard = ({ no, title, subTitle, des, image, icons }) => {
     target: scrollRef,
     offset: ["0 1", "1.33 1"],
   });
+
   return (
-    <motion.div
+    <motion.a
+      href={`/portfolio/${linkId}`}
       ref={scrollRef}
       style={{ scale: scrollYProgress, opacity: scrollYProgress }}
-      className={`w-full text-white relative overflow-hidden rounded-lg flex flex-col items-start transition-all ease-in-out hover:shadow-lg hover:scale-115 pt-5 lg:pt-7 gap-y-10 ${cardBg}`}
+      className={`card-parent w-full text-white relative overflow-hidden rounded-lg flex flex-col items-start transition-all ease-in-out hover:shadow-lg pt-5 lg:pt-7 gap-y-10 ${cardBg}`}
     >
       <div className="w-full flex items-center justify-between px-5 lg:px-10">
         <p className="font-medium text-sm lg:text-lg">
@@ -39,14 +41,14 @@ const ElevateCard = ({ no, title, subTitle, des, image, icons }) => {
             className="h-[160px] object-top object-cover rounded-tr-xl lg:h-[300px]"
           />
         </div>
-        <div className="w-[45%] flex flex-col items-start pr-3 lg:gap-y-2 lg:pr-0 lg:w-1/2">
+        <div className="w-[45%] flex flex-col items-start pr-3 lg:gap-y-2 lg:pr-5 lg:w-4/6">
           <p className="font-bold text-xl lg:text-4xl">{subTitle}</p>
           <p className="text-sm font-semibold line-clamp-5 lg:text-lg lg:line-clamp-none">
             {des}
           </p>
         </div>
       </div>
-    </motion.div>
+    </motion.a>
   );
 };
 

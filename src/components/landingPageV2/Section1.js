@@ -50,7 +50,7 @@ const Section1 = () => {
       <div className="w-full z-20 flex flex-col gap-y-4 items-center max-w-[900px] mt-11 lg:gap-y-10 lg:mt-24 lg:absolute">
         <div className="flex items-start justify-between gap-x-5 lg:gap-x-6">
           {data?.map((item, index) => {
-            const parentClassName = `${cardBg} shadow-md rounded transform-all duration-300 hover:scale-110 lg:rounded-md`;
+            const parentClassName = `${cardBg} shadow-md rounded transition-all duration-300 hover:scale-110 lg:rounded-md`;
             return (
               <div
                 key={index}
@@ -104,7 +104,7 @@ const Section1 = () => {
               width={0}
               height={0}
               src={monitor}
-              className="w-[70%] absolute -top-3 transform-all duration-300 scale-105 hover:scale-110 lg:top-7 lg:max-w-40 lg:h-40"
+              className="w-[70%] absolute -top-3 transition-all duration-300 scale-105 hover:scale-110 lg:top-7 lg:max-w-40 lg:h-40"
             />
             <Image
               width={0}
@@ -124,7 +124,7 @@ const Section1 = () => {
               width={0}
               height={0}
               src={ball}
-              className="w-[30px] h-[30px] transform-all duration-300 lg:w-16 lg:h-auto hover:scale-110"
+              className="w-[30px] h-[30px] transition-all duration-300 lg:w-16 lg:h-auto hover:scale-110"
             />
             <Image
               width={0}

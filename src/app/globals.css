@@ -114,3 +114,10 @@ body {
   display: flex;
   transform: translateY(0);
 }
+
+.card-parent {
+}
+
+.card-parent:hover {
+  scale: 1.05;
+}

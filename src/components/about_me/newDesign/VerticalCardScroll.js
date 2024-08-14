@@ -19,6 +19,7 @@ const VerticalCardScroll = () => {
             des={item?.des}
             image={item?.image}
             icons={item?.icons}
+            linkId={item?.linkId}
           />
         );
       })}

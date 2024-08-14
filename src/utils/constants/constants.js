@@ -154,6 +154,7 @@ export const project_list = [
     des: `Focused on Bug Fixes, implemented "Comet Chat" and handled file sharing from other apps to voxguru app.`,
     image: voxguru,
     icons: [IoLogoAndroid, FaAppStoreIos],
+    linkId: 6,
   },
   {
     title: "HOTI",
@@ -161,6 +162,7 @@ export const project_list = [
     des: "Developed this project from scratch using react native, creating reusable components, and keeping the codebase clean and tidy.",
     image: hoti,
     icons: [IoLogoAndroid],
+    linkId: 5,
   },
   {
     title: "TRULIV",
@@ -168,6 +170,7 @@ export const project_list = [
     des: "An innovative business tool that helps you locate affordable places to stay in Chennai and Bangalore.",
     image: trulivTab,
     icons: [RiNextjsFill],
+    linkId: 8,
   },
   {
     title: "TRULIV",
@@ -175,6 +178,7 @@ export const project_list = [
     des: "An dedicated mobile-friendly version of their website, in order to reach a larger audience base via mobile platforms. Easy to utilise at convenient times.",
     image: trulivMobile,
     icons: [IoLogoAndroid, FaAppStoreIos],
+    linkId: 7,
   },
 ];
 

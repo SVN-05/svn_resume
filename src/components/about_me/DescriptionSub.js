@@ -59,14 +59,14 @@ const DescriptionSub = () => {
           <a
             href={hyperLinks.linkedin}
             targeth="_blank"
-            className="bg-white cursor-pointer transform-all duration-300 ease-in-out hover:scale-110"
+            className="bg-white cursor-pointer transition-all duration-300 ease-in-out hover:scale-110"
           >
             <FaLinkedin size={30} color={colors.blue4} />
           </a>
           <a
             href={`/contact`}
             // target="_blank"
-            className="cursor-pointer transform-all duration-300 ease-in-out hover:scale-110"
+            className="cursor-pointer transition-all duration-300 ease-in-out hover:scale-110"
           >
             <Image
               className=""
@@ -79,7 +79,7 @@ const DescriptionSub = () => {
           <a
             href="https://github.com/SVN-05"
             target="_blank"
-            className="transform-all duration-300 ease-in-out hover:scale-110"
+            className="transition-all duration-300 ease-in-out hover:scale-110"
           >
             <FaGithubSquare size={30} />
           </a>

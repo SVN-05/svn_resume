@@ -42,7 +42,7 @@ const ContactMeCard = () => {
       <a
         href="/contact"
         style={{ backgroundColor: btnColor }}
-        className="text-md font-medium rounded-md px-3 py-2 text-white"
+        className="text-md font-medium rounded-md px-3 py-2 text-white transition-all ease-in-out duration-300 hover:scale-110"
       >
         Contact me
       </a>
