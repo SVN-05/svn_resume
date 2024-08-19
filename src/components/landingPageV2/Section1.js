@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useContext } from "react";
 import Spline from "@splinetool/react-spline";
 import Image from "next/image";
 import {
@@ -13,8 +14,10 @@ import {
 } from "@/utils/ImageIndex";
 import { LandingPageIconSection } from "@/utils/constants/constants";
 import useAppStore from "@/store/store";
+import { LandingContext } from "../about_me/LandingPageV2";
 
 const Section1 = () => {
+  const { setIsSplineLoaded, isSplineLoaded } = useContext(LandingContext);
   const isDarkMode = useAppStore((state) => state.isDarkMode);
   const cardBg = isDarkMode ? "bg-black" : "bg-grey1";
   const data = [
@@ -31,8 +34,19 @@ const Section1 = () => {
     },
   ];
 
+  function onLoad(spline) {
+    if (spline) {
+      setTimeout(() => {
+        setIsSplineLoaded(true);
+      }, 3000);
+    }
+  }
+
   return (
-    <div className="flex flex-col items-center pt-20 lg:h-screen lg:pt-0 lg:justify-center">
+    <div
+      style={{ opacity: isSplineLoaded ? 1 : 0 }}
+      className="flex flex-col items-center pt-20 transition-all duration-300 ease-in-out lg:h-screen lg:pt-0 lg:justify-center"
+    >
       <div className="flex flex-col items-center z-0 lg:absolute lg:top-24">
         <p
           className={`bg-gradient-to-b ${
@@ -136,7 +150,8 @@ const Section1 = () => {
         </div>
       </div>
       <Spline
-        className="hidden lg:flex z-10"
+        className="hidden lg:flex z-10 transition-all duration-300 ease-in-out"
+        onLoad={onLoad}
         scene="https://prod.spline.design/vx4ytD5cO0ESrtUp/scene.splinecode" //https://prod.spline.design/7neZ-0D-VL4sEaQH/scene.splinecode
       />
     </div>
