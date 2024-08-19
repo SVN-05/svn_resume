@@ -14,7 +14,7 @@ const VerticalScrollComponent = ({ items = [] }) => {
 
     const handleScroll = () => {
       const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
+        window.pageYOffset || document?.documentElement.scrollTop;
       const viewportHeight = window.innerHeight;
 
       if (scrollTop > lastScrollTop) {

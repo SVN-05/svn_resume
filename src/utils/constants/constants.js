@@ -89,6 +89,11 @@ export const navBarOptions = [
   { text: "contact", link: "/contact", icon: RiContactsFill },
 ];
 
+export const aboutMeHoverOptions = [
+  { text: "About Me 1", link: "/" },
+  { text: "About Me 2", link: "/aboutme2" },
+];
+
 export const resume = {
   description:
     "Front end developer with a proven record of success in Cyces who can assist industries in building and managing more reusable code. I have a strong desire to utilise my talents on a larger development team and am passionate about learning and growth. willing to take on more challenging issues and always looking for ways to improve the customer experience.",

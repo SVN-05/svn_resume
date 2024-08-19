@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import ThemeSwitch from "@/components/toggleButtons/ThemeSwitch";
 import {
+  aboutMeHoverOptions,
   colors,
   navBarOptions,
   userDetails,
@@ -13,6 +14,7 @@ import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import SideDrawer from "../SideDrawer";
 import PageProgress from "../PageProgress";
+import DropdownMenu from "@/components/dropdown/DropdownMenu";
 
 const AppNav = () => {
   const pathName = usePathname();
@@ -125,8 +127,19 @@ const AppNav = () => {
           </p>
           {navBarOptions?.map((item) => {
             const currentTab = pathName === item?.link;
+            const isAbout = item?.text === "about me";
 
-            return (
+            return isAbout ? (
+              <DropdownMenu
+                title={item?.text}
+                options={aboutMeHoverOptions}
+                titleClassName={`hidden cursor-pointer capitalize underline-offset-8 md:flex ${
+                  currentTab
+                    ? "font-bold text-[15px]"
+                    : "font-normal text-[13px] hover:underline"
+                }`}
+              />
+            ) : (
               <a
                 key={item?.text}
                 href={item?.link}
