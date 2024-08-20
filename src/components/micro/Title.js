@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Halftinted from "../lines/Halftinted";
-import useAppStore from "@/store/store";
 
 const Title = ({
   text = "",
@@ -9,14 +8,9 @@ const Title = ({
   titleContainer = "",
   className = "",
 }) => {
-  const titlecolor = useAppStore((state) => state.titlecolor);
-
   return (
     <div className={`flex flex-col items-start ${titleContainer}`}>
-      <p
-        style={{ color: titlecolor }}
-        className="text-xl text-start font-semibold"
-      >
+      <p className="text-xl text-start font-semibold custom-title-color">
         {text}
       </p>
       <Halftinted width={width} classname={`mt-1 ${className}`} />

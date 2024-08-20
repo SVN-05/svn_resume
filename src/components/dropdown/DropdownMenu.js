@@ -13,7 +13,6 @@ const DropdownMenu = ({
   const [isOpen, setIsOpen] = useState(false);
   const [rotateDeg, setRotateDeg] = useState("rotate-0");
   const isDarkMode = useAppStore((state) => state.isDarkMode);
-  const textcolor = useAppStore((state) => state.textcolor);
   const bgColor = isDarkMode ? colors.grey1 : colors.black;
 
   function onMouseOver() {
@@ -31,13 +30,12 @@ const DropdownMenu = ({
       <div
         onMouseOver={onMouseOver}
         onMouseOut={onMouseOut}
-        className="flex items-center gap-x-2"
+        className="flex items-center gap-x-2 cursor-pointer"
       >
         <p className={titleClassName}>{title}</p>
         <IoIosArrowDown
           size={15}
-          color={textcolor}
-          className={`transition-all duration-500 ${rotateDeg}`}
+          className={`custom-text-color transition-all duration-500 ${rotateDeg}`}
         />
       </div>
       <motion.div

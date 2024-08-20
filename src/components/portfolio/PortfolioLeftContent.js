@@ -7,7 +7,6 @@ import { FaChevronRight } from "react-icons/fa";
 
 const PortfolioLeftContent = ({ project_name = "", images = [], id = 0 }) => {
   const data = projects?.find((item) => item?.id === id);
-  const titleColor = useAppStore((state) => state.titlecolor);
   const paraColor = useAppStore((state) => state.isDarkMode)
     ? colors.grey9
     : colors.grey7;
@@ -16,8 +15,7 @@ const PortfolioLeftContent = ({ project_name = "", images = [], id = 0 }) => {
     <div className={`max-w-[690px] relative overflow-hidden`}>
       <a
         href="/portfolio"
-        style={{ color: titleColor }}
-        className="text-3xl font-semibold mb-7 flex items-center gap-x-2 cursor-pointer"
+        className="custom-title-color text-3xl font-semibold mb-7 flex items-center gap-x-2 cursor-pointer"
       >
         Portfolio <FaChevronRight size={25} /> {data?.project_name}
       </a>

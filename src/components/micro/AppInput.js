@@ -25,7 +25,6 @@ const AppInput = ({
   handleInputChange = () => {},
 }) => {
   const isDarkMode = useAppStore((state) => state.isDarkMode);
-  const titlecolor = useAppStore((state) => state.titlecolor);
   const lineStrokeColor = isDarkMode ? colors.grey20 : colors.grey21;
   const value = values?.[name];
   const error = errors?.[name];
@@ -47,9 +46,8 @@ const AppInput = ({
             height: height,
             borderColor: error ? colors.red : lineStrokeColor,
             borderWidth: 2,
-            color: titlecolor,
           }}
-          className={`border-2 rounded bg-transparent text-sm pl-3 pt-3 ${inputClassName}`}
+          className={`custom-title-color border-2 rounded bg-transparent text-sm pl-3 pt-3 ${inputClassName}`}
           onChange={handleInputChange}
         />
       ) : (
@@ -62,9 +60,8 @@ const AppInput = ({
             height: height,
             borderColor: error ? colors.red : lineStrokeColor,
             borderWidth: 2,
-            color: titlecolor,
           }}
-          className={`border-2 rounded bg-transparent text-sm pl-3 ${inputClassName}`}
+          className={`custom-title-color border-2 rounded bg-transparent text-sm pl-3 ${inputClassName}`}
           onChange={handleInputChange}
         />
       )}

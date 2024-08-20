@@ -119,6 +119,7 @@ module.exports = {
       },
     },
   },
+  darkMode: "class",
   plugins: [
     plugin(({ matchUtilities }) => {
       matchUtilities({

@@ -5,7 +5,6 @@ import Image from "next/image";
 import useAppStore from "@/store/store";
 
 const ElevateCard = ({ no, title, subTitle, des, image, icons, linkId }) => {
-  const iconcolor = useAppStore((state) => state.iconcolor);
   const isDarkMode = useAppStore((state) => state.isDarkMode);
   const cardBg = isDarkMode ? "bg-black" : "bg-grey1";
   const scrollRef = useRef(null);
@@ -28,7 +27,7 @@ const ElevateCard = ({ no, title, subTitle, des, image, icons, linkId }) => {
         <div className="flex items-center gap-x-3">
           {icons?.map((item, index) => {
             const Icon = item;
-            return <Icon key={index} color={iconcolor} size={20} />;
+            return <Icon key={index} size={20} className="theme-color" />;
           })}
         </div>
       </div>

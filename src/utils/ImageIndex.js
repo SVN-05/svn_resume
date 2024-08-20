@@ -1,7 +1,7 @@
 import gmail from "../../public/gmail.svg";
 import rtkQuery from "../../public/rtkQuery.png";
 import bear from "../../public/bear.jpg";
-import thirdParty from "../../public/third-party.png";
+import thirdPartyImage from "../../public/third-party.png";
 import cometChat from "../../public/cometchat-icon.png";
 import nextjsImage from "../../public/nextJs.png";
 import figmaSvg from "../../public/figma.svg";
@@ -30,7 +30,7 @@ export {
   gmail,
   rtkQuery,
   bear,
-  thirdParty,
+  thirdPartyImage,
   cometChat,
   nextjsImage,
   figmaSvg,
