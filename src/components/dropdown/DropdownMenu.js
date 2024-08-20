@@ -49,8 +49,14 @@ const DropdownMenu = ({
           y: isOpen ? 0 : 50,
         }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
-        style={{ zIndex: 100, backgroundColor: bgColor }}
-        className="absolute top-12 shadow-lg rounded-md flex flex-col items-start w-32 px-4 py-2 gap-y-2"
+        style={{
+          zIndex: 100,
+          backgroundColor: bgColor,
+          pointerEvents: isOpen ? "auto" : "none",
+        }}
+        className={
+          "hidden absolute top-12 shadow-lg rounded-md lg:flex flex-col items-start w-32 px-4 py-2 gap-y-2"
+        }
       >
         {options?.map((item, index) => (
           <a
