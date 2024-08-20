@@ -4,17 +4,13 @@ import useAppStore from "@/store/store";
 import { colors, skeletonLineHeight } from "@/utils/constants/constants";
 
 const SkeletonBlock = ({ isLastIndex = false }) => {
-  const iconcolor = useAppStore((state) => state.iconcolor);
   const isDarkMode = useAppStore((state) => state.isDarkMode);
   const lineStrokeColor = isDarkMode ? colors.grey1 : colors.grey14;
 
   return (
     <div>
       <Box display="flex" alignItems={"center"} gap={5}>
-        <Center
-          style={{ borderColor: iconcolor }}
-          className="border-2 rounded-2xl px-3 py-2"
-        >
+        <Center className="custom-theme-border border-2 rounded-2xl px-3 py-2">
           <SkeletonText
             width={"100px"}
             noOfLines={1}

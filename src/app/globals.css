@@ -56,6 +56,10 @@ main {
   border-color: var(--background-color);
 }
 
+.custom-theme-border {
+  border-color: var(--primary-color);
+}
+
 .theme-color {
   color: var(--primary-color);
 }

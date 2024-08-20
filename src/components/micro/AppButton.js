@@ -24,7 +24,7 @@ const AppButton = ({
         backgroundColor: btnBg,
         boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
       }}
-      className={`custom-border w-fit border-2 rounded-2xl py-2 px-5 transition-all duration-300 text-sm ${className}`}
+      className={`custom-border w-fit border-2 rounded-2xl py-2 px-5 transition-all duration-300 text-sm hover:text-white ${className}`}
       onMouseOver={() => {
         setBtnBg(iconColor);
       }}
