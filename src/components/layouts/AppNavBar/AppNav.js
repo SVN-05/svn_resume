@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import ThemeSwitch from "@/components/toggleButtons/ThemeSwitch";
 import {
   aboutMeHoverOptions,
-  colors,
   navBarOptions,
   userDetails,
 } from "@/utils/constants/constants";
@@ -21,9 +20,7 @@ const AppNav = () => {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
   const initial = getFirstletter(userDetails?.firstName);
-  const isToggled = useAppStore((state) => state.isDarkMode);
-  const appBg = useAppStore((state) => state.appBg);
-  const changeAppTheme = useAppStore((state) => state.changeAppTheme);
+  const isToggled = resolvedTheme === "dark";
   const applyLightTheme = useAppStore((state) => state.applyLightTheme);
   const applyDarkTheme = useAppStore((state) => state.applyDarkTheme);
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +33,6 @@ const AppNav = () => {
     } else {
       setTheme("light");
     }
-    changeAppTheme();
   };
 
   const getAppTheme = () => {
@@ -109,9 +105,8 @@ const AppNav = () => {
   };
 
   return (
-    <div
+    <main
       style={{
-        backgroundColor: isToggled ? colors.grey4 : colors.white,
         boxShadow: "rgba(149, 157, 165, 0.2) 0px 1px 0px 0px",
         zIndex: 99,
       }}
@@ -134,10 +129,10 @@ const AppNav = () => {
                 title={item?.text}
                 options={aboutMeHoverOptions}
                 parentClassName="hidden lg:flex flex-col"
-                titleClassName={`hidden cursor-pointer capitalize underline-offset-8 md:flex ${
+                titleClassName={`hidden capitalize md:flex ${
                   currentTab
                     ? "font-bold text-[15px]"
-                    : "font-normal text-[13px] hover:underline"
+                    : "font-normal text-[13px]"
                 }`}
               />
             ) : (
@@ -158,7 +153,6 @@ const AppNav = () => {
         </div>
         <SideDrawer
           isToggled={isToggled}
-          appBg={appBg}
           isOpen={isOpen}
           setIsOpen={setIsOpen}
           showOverlay={showOverlay}
@@ -170,7 +164,7 @@ const AppNav = () => {
           {dateTime?.date} <span>{dateTime?.time}</span>
         </p>
       </div>
-    </div>
+    </main>
   );
 };
 

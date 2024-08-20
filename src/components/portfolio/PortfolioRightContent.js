@@ -11,14 +11,12 @@ import { SiGmail } from "react-icons/si";
 const PortfolioRightContent = ({ id = 0 }) => {
   const data = projects?.find((item) => item?.id === id);
   const isDarkMode = useAppStore((state) => state.isDarkMode);
-  const titleColor = useAppStore((state) => state.titlecolor);
   const iconColor = useAppStore((state) => state.iconcolor);
 
   const bg = isDarkMode ? colors.grey1 : colors.grey6;
   const shareIconBg = isDarkMode ? colors.grey19 : colors.white;
   const shareIconUnmountColor = isDarkMode ? colors.white : colors.grey18;
   const borderColor = isDarkMode ? colors.grey17 : colors.grey11;
-  const textColor = isDarkMode ? colors.grey9 : colors.grey7;
 
   const iconSize = 20;
 
@@ -40,11 +38,7 @@ const PortfolioRightContent = ({ id = 0 }) => {
   });
 
   const Title = ({ text = "" }) => {
-    return (
-      <p style={{ color: titleColor }} className="font-bold text-lg">
-        {text}
-      </p>
-    );
+    return <p className="custom-title-color font-bold text-lg">{text}</p>;
   };
 
   return (
@@ -52,7 +46,6 @@ const PortfolioRightContent = ({ id = 0 }) => {
       style={{
         backgroundColor: bg,
         borderColor: borderColor,
-        color: textColor,
       }}
       className={`w-full h-fit flex flex-col items-start px-5 py-6 border-2 rounded-lg gap-y-5 text-sm lg:max-w-[360px] lg:sticky lg:top-24`}
     >
@@ -61,7 +54,7 @@ const PortfolioRightContent = ({ id = 0 }) => {
         const Icon = item?.icon;
         return (
           <div key={index} className="flex gap-x-3">
-            <Icon size={iconSize} color={iconColor} />
+            <Icon size={iconSize} className="theme-color" />
             <p>{item?.text}</p>
           </div>
         );

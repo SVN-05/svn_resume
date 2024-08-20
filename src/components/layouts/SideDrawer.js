@@ -1,13 +1,12 @@
 "use client";
 import React from "react";
 import { colors, navBarOptions } from "@/utils/constants/constants";
-import useAppStore from "@/store/store";
 import { usePathname } from "next/navigation";
 import { HiUserCircle } from "react-icons/hi";
+import useAppStore from "@/store/store";
 
 const SideDrawer = ({
   isToggled,
-  appBg,
   isOpen,
   setIsOpen,
   showOverlay,
@@ -48,9 +47,8 @@ const SideDrawer = ({
           boxShadow: isToggled
             ? "rgba(34,34,34, 0.2) 0px 8px 24px"
             : "rgba(149, 157, 165, 0.2) 0px 8px 24px",
-          backgroundColor: appBg,
         }}
-        className="flex flex-col z-20 gap-y-5 text-lg max-w-2/6 h-full self-end px-6 pt-6 rounded-tl-xl"
+        className="flex flex-col z-20 gap-y-5 text-lg max-w-2/6 h-full self-end px-6 pt-6 rounded-tl-xl custom-bg"
       >
         {modifiedNavOptions?.map((item2) => {
           const currentTab = pathName === item2?.link;

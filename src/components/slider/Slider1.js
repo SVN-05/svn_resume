@@ -5,10 +5,8 @@ import useAppStore from "@/store/store";
 import { colors } from "@/utils/constants/constants";
 import Image from "next/image";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { Skeleton } from "@chakra-ui/react";
 
 const Slider1 = ({ data = [], perView = 3, spacing = 15 }) => {
-  const iconColor = useAppStore((state) => state.iconcolor);
   const activeDotColor = useAppStore((state) => state.iconcolor);
   const inactiveDotColor = useAppStore((state) => state.isDarkMode)
     ? colors.white
@@ -103,7 +101,9 @@ const Slider1 = ({ data = [], perView = 3, spacing = 15 }) => {
                   ) : (
                     item?.icon?.map((item2) => {
                       const Icon = item2;
-                      return <Icon key={item2} size={45} color={iconColor} />;
+                      return (
+                        <Icon key={item2} size={45} className="theme-color" />
+                      );
                     })
                   )}
                 </div>

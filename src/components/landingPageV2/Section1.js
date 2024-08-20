@@ -10,7 +10,7 @@ import {
   monitor,
   nextjsImage,
   table,
-  thirdParty,
+  thirdPartyImage,
 } from "@/utils/ImageIndex";
 import { LandingPageIconSection } from "@/utils/constants/constants";
 import useAppStore from "@/store/store";
@@ -29,7 +29,7 @@ const Section1 = () => {
     { top: [], bottom: mobileDev, className: "" },
     {
       top: LandingPageIconSection?.box2,
-      bottom: thirdParty,
+      bottom: thirdPartyImage,
       className: "skew-y-2",
     },
   ];

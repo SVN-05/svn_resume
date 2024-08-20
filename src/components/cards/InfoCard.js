@@ -1,17 +1,13 @@
-import useAppStore from "@/store/store";
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
 
 const InfoCard = ({ bgImage, title, des, parentClassName }) => {
-  const textColor = useAppStore((state) => state.iconcolor);
-  const appBg = useAppStore((state) => state.appBg);
-
   return (
     <div
       className={`w-full h-full flex flex-col relative items-center overflow-hidden rounded-br-lg rounded-bl-lg transition-all duration-300 ease-in-out ${parentClassName}`}
     >
       <div
-        className={`flex flex-col rounded-lg w-full h-full p-4 justify-end relative overflow-hidden border-[1px] border-solid border-${appBg}`}
+        className={`flex flex-col rounded-lg w-full h-full p-4 justify-end relative overflow-hidden border-[1px] border-solid custom-border`}
       >
         <Image
           src={bgImage}
@@ -20,10 +16,7 @@ const InfoCard = ({ bgImage, title, des, parentClassName }) => {
           className="w-full h-full z-0 object-cover object-center rounded-lg"
         />
         <div className="w-full flex flex-col items-start gap-y-2 z-10 absolute px-4 pb-4 text-sm">
-          <p
-            style={{ color: textColor, borderColor: textColor }}
-            className="font-medium bg-black rounded-lg p-2 border-[1px]"
-          >
+          <p className="theme-color custom-border font-medium bg-black rounded-lg p-2 border-[1px]">
             {title}
           </p>
           <p className="w-5/6 font-medium line-clamp-1 text-white">{des}</p>

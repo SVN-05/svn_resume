@@ -17,8 +17,6 @@ const DescriptionSub = () => {
 
   const isDarkMode = useAppStore((state) => state.isDarkMode);
   const circleBg = isDarkMode ? colors.grey5 : colors.white;
-  const iconColor = useAppStore((state) => state.textColor);
-  const titleColor = isDarkMode ? colors.white : colors.grey1;
   const despColor = isDarkMode ? colors.white : colors.grey7;
 
   const { transform } = useHover3dAnimation(parentRef, {
@@ -40,7 +38,7 @@ const DescriptionSub = () => {
       >
         <FaUserSecret
           size={window?.innerWidth < 640 ? 150 : 190}
-          color={iconColor}
+          className="custom-text-color"
         />
       </div>
       <div className="flex flex-col items-center md:items-start md:w-1/2">
@@ -48,7 +46,7 @@ const DescriptionSub = () => {
           {resume.jobRole}
         </p>
         <p noOfLines={1}>
-          <h1 style={{ color: titleColor }} className="font-bold text-5xl mt-3">
+          <h1 className="custom-title-color font-bold text-5xl mt-3">
             {userDetails.firstName} {userDetails.lastName}
           </h1>
         </p>

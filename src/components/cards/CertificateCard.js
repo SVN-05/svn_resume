@@ -11,7 +11,6 @@ const CertificateCard = ({
   date = null,
 }) => {
   const isDarkMode = useAppStore((state) => state.isDarkMode);
-  const titleColor = useAppStore((state) => state.titlecolor);
   const textColor = isDarkMode ? colors.grey3 : colors.grey15;
   const lineStrokeColor = isDarkMode ? colors.grey1 : colors.grey14;
   const logoBg = isDarkMode ? colors.grey5 : colors.grey2;
@@ -31,7 +30,7 @@ const CertificateCard = ({
         style={{ color: textColor }}
         className="w-4/6 flex flex-col items-start py-5 ml-7 text-xs"
       >
-        <p style={{ color: titleColor }} className="text-lg">
+        <p className="text-lg custom-title-color">
           {title}
           <br /> <span className="text-xs opacity-70">By: {conducted_by}</span>
         </p>

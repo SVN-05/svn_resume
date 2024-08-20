@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import useAppStore from "@/store/store";
 
 const PortfolioCard = ({
   imageName = "",
@@ -9,9 +8,6 @@ const PortfolioCard = ({
   icons = [],
   id = Number,
 }) => {
-  const bg = useAppStore((state) => state.appBg);
-  const iconcolor = useAppStore((state) => state.iconcolor);
-
   return (
     <a
       href={`/portfolio/${id}`}
@@ -21,26 +17,17 @@ const PortfolioCard = ({
         style={{ backgroundImage: `url(/${imageName})` }}
         className="w-full h-full bg-center bg-cover bg-no-repeat rounded-lg absolute top-0 -left-4 right-0 bottom-0 z-0 transition-all duration-300 translate-x-4 hover:scale-110"
       />
-      <p
-        style={{ backgroundColor: bg }}
-        className="text-sm font-semibold py-2 px-4 rounded-lg z-10 shadow-md"
-      >
+      <p className="custom-bg text-sm font-semibold py-2 px-4 rounded-lg z-10 shadow-md">
         {project_name}
       </p>
       <div className="w-full portfolio-card-child-div flex justify-between items-center z-10">
-        <p
-          style={{ backgroundColor: bg }}
-          className="rounded-md py-2 px-4 text-xs font-normal shadow-md"
-        >
+        <p className="custom-bg rounded-md py-2 px-4 text-xs font-normal shadow-md">
           {language_used}
         </p>
-        <div
-          style={{ backgroundColor: bg }}
-          className="rounded-md flex items-center gap-x-2 py-2 px-4 shadow-md"
-        >
+        <div className="custom-bg rounded-md flex items-center gap-x-2 py-2 px-4 shadow-md">
           {icons?.map((item, index) => {
             const Icon = item;
-            return <Icon key={index} size={30} color={iconcolor} />;
+            return <Icon key={index} size={30} className="theme-color" />;
           })}
         </div>
       </div>

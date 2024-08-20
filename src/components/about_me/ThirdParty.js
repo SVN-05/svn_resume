@@ -1,14 +1,12 @@
 "use client";
 import React from "react";
-import { cometChat, thirdParty } from "@/utils/ImageIndex";
+import { cometChat, thirdPartyImage } from "@/utils/ImageIndex";
 import Image from "next/image";
 import Title from "../micro/Title";
 import { IoLogoFirebase } from "react-icons/io5";
 import { FaAppStoreIos, FaAws } from "react-icons/fa";
-import useAppStore from "@/store/store";
 
 const ThirdParty = () => {
-  const iconcolor = useAppStore((state) => state.iconcolor);
   const keyPoints = [
     { icon: cometChat, title: "Cometchat UI Kit V4", isImage: true },
     { icon: FaAppStoreIos, title: "Appstore Server Notification V2" },
@@ -23,7 +21,7 @@ const ThirdParty = () => {
         <Image
           width={0}
           height={0}
-          src={thirdParty}
+          src={thirdPartyImage}
           alt="Third Party"
           className="w-[98%] h-[99%] rounded-tl-2xl rounded-br-2xl -ml-5 -mt-7"
         />
@@ -43,7 +41,7 @@ const ThirdParty = () => {
                     src={item?.icon}
                   />
                 ) : (
-                  <Icon size={iconSize} color={iconcolor} />
+                  <Icon size={iconSize} className="theme-color" />
                 )}
                 <p>{item?.title}</p>
               </div>
