@@ -4,7 +4,12 @@ import { colors } from "@/utils/constants/constants";
 import { IoIosArrowDown } from "react-icons/io";
 import { motion } from "framer-motion";
 
-const DropdownMenu = ({ title = "", options = [], titleClassName }) => {
+const DropdownMenu = ({
+  title = "",
+  options = [],
+  titleClassName,
+  parentClassName = "flex flex-col",
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [rotateDeg, setRotateDeg] = useState("rotate-0");
   const isDarkMode = useAppStore((state) => state.isDarkMode);
@@ -22,7 +27,7 @@ const DropdownMenu = ({ title = "", options = [], titleClassName }) => {
   }
 
   return (
-    <div className="flex flex-col">
+    <div className={parentClassName}>
       <div
         onMouseOver={onMouseOver}
         onMouseOut={onMouseOut}
@@ -38,14 +43,14 @@ const DropdownMenu = ({ title = "", options = [], titleClassName }) => {
       <motion.div
         onMouseOver={onMouseOver}
         onMouseOut={onMouseOut}
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 50 }}
         animate={{
           opacity: isOpen ? 1 : 0,
-          y: isOpen ? 0 : 40,
+          y: isOpen ? 0 : 50,
         }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
         style={{ zIndex: 100, backgroundColor: bgColor }}
-        className="absolute top-12 shadow-lg rounded-md flex flex-col items-start w-32 px-4 py-2 gap-y-2 transition-all ease-in-out"
+        className="absolute top-12 shadow-lg rounded-md flex flex-col items-start w-32 px-4 py-2 gap-y-2"
       >
         {options?.map((item, index) => (
           <a

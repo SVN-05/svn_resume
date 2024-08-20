@@ -133,6 +133,7 @@ const AppNav = () => {
               <DropdownMenu
                 title={item?.text}
                 options={aboutMeHoverOptions}
+                parentClassName="hidden lg:flex flex-col"
                 titleClassName={`hidden cursor-pointer capitalize underline-offset-8 md:flex ${
                   currentTab
                     ? "font-bold text-[15px]"
