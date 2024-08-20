@@ -3,6 +3,7 @@ import React from "react";
 import { colors, navBarOptions } from "@/utils/constants/constants";
 import useAppStore from "@/store/store";
 import { usePathname } from "next/navigation";
+import { HiUserCircle } from "react-icons/hi";
 
 const SideDrawer = ({
   isToggled,
@@ -16,6 +17,15 @@ const SideDrawer = ({
   const pathName = usePathname();
   const navBarHeight = "64px";
   const iconcolor = useAppStore((state) => state.iconcolor);
+  const index = 1;
+  const newObjects = [
+    { text: "About Me 2", link: "/aboutme2", icon: HiUserCircle },
+  ];
+  const modifiedNavOptions = [
+    ...navBarOptions.slice(0, index),
+    ...newObjects,
+    ...navBarOptions.slice(index),
+  ];
 
   return (
     <div
@@ -40,9 +50,9 @@ const SideDrawer = ({
             : "rgba(149, 157, 165, 0.2) 0px 8px 24px",
           backgroundColor: appBg,
         }}
-        className="flex flex-col z-20 gap-y-5 text-lg max-w-[205px] h-full self-end px-6 pt-6 rounded-tl-xl"
+        className="flex flex-col z-20 gap-y-5 text-lg max-w-2/6 h-full self-end px-6 pt-6 rounded-tl-xl"
       >
-        {navBarOptions?.map((item2) => {
+        {modifiedNavOptions?.map((item2) => {
           const currentTab = pathName === item2?.link;
           const Icon = item2?.icon;
           const bg = currentTab
