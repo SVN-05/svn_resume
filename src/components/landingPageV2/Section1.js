@@ -42,6 +42,10 @@ const Section1 = () => {
     }
   }
 
+  function onError(error) {
+    console.log("error occured for loading spline with exception:-", error);
+  }
+
   return (
     <div
       style={{ opacity: isSplineLoaded ? 1 : 0 }}
@@ -152,6 +156,7 @@ const Section1 = () => {
       <Spline
         className="hidden lg:flex z-10 transition-all duration-300 ease-in-out"
         onLoad={onLoad}
+        onError={onError}
         scene="https://prod.spline.design/vx4ytD5cO0ESrtUp/scene.splinecode" //https://prod.spline.design/7neZ-0D-VL4sEaQH/scene.splinecode
       />
     </div>
