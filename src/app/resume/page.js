@@ -6,6 +6,7 @@ import Education from "@/components/resume/Education";
 import Experience from "@/components/resume/Experience";
 import Certificates from "@/components/resume/Certificates";
 import { PageContext } from "@/context/context.provider";
+import { defaultPageLoadDuration } from "@/utils/constants/constants";
 
 const Resume = () => {
   const { isResumeLoaded, setIsResumeLoaded } = useContext(PageContext);
@@ -13,7 +14,7 @@ const Resume = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsResumeLoaded(!isResumeLoaded);
-    }, 2000);
+    }, defaultPageLoadDuration);
   }, []);
 
   return (

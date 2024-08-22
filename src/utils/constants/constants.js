@@ -46,6 +46,7 @@ import { HiUserCircle } from "react-icons/hi";
 import { ImBook } from "react-icons/im";
 import { IoFileTrayFull, IoLogoFirebase } from "react-icons/io5";
 
+export const defaultPageLoadDuration = 2000;
 export const colors = theme.extend.colors;
 export const array3 = [1, 2, 3];
 export const skeletonLineHeight = "12px";

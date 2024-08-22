@@ -12,7 +12,10 @@ import {
   table,
   thirdPartyImage,
 } from "@/utils/ImageIndex";
-import { LandingPageIconSection } from "@/utils/constants/constants";
+import {
+  LandingPageIconSection,
+  defaultPageLoadDuration,
+} from "@/utils/constants/constants";
 import useAppStore from "@/store/store";
 import { LandingContext } from "../about_me/LandingPageV2";
 
@@ -38,7 +41,7 @@ const Section1 = () => {
     if (spline) {
       setTimeout(() => {
         setIsSplineLoaded(true);
-      }, 3000);
+      }, defaultPageLoadDuration);
     }
   }
 

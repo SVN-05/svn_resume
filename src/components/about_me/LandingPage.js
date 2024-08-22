@@ -8,6 +8,7 @@ import Projects from "./Projects";
 import { PageContext } from "@/context/context.provider";
 import ThirdParty from "./ThirdParty";
 import ContactMeCard from "./ContactMeCard";
+import { defaultPageLoadDuration } from "@/utils/constants/constants";
 
 const LandingPage = () => {
   const { isLandingLoaded, setIsLandingLoaded } = useContext(PageContext);
@@ -15,7 +16,7 @@ const LandingPage = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLandingLoaded(!isLandingLoaded);
-    }, 2000);
+    }, defaultPageLoadDuration);
   }, []);
 
   return (

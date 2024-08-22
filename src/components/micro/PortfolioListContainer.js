@@ -1,7 +1,7 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
 import PortfolioCard from "../cards/PortfolioCard";
-import { projects } from "@/utils/constants/constants";
+import { defaultPageLoadDuration, projects } from "@/utils/constants/constants";
 import useAppStore from "@/store/store";
 import { PageContext } from "@/context/context.provider";
 import SkeletonPortfolioCard from "../skeletons/cards/SkeletonPortfolioCard";
@@ -15,7 +15,7 @@ const PortfolioListContainer = () => {
     setTimeout(() => {
       setFilteredData(projects);
       setIsPortfolioLoaded(!isPortfolioLoaded);
-    }, 2000);
+    }, defaultPageLoadDuration);
   }, []);
 
   useEffect(() => {

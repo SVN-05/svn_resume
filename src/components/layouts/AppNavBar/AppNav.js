@@ -55,7 +55,7 @@ const AppNav = () => {
     };
 
     updateDateTime();
-    const intervalId = setInterval(updateDateTime, 5000); // Update every minute
+    const intervalId = setInterval(updateDateTime, 5000);
 
     return () => clearInterval(intervalId);
   }, []);
