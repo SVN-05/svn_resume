@@ -1,20 +1,15 @@
 "use client";
 import React, { useContext } from "react";
-import useAppStore from "@/store/store";
 import { MdDeveloperMode } from "react-icons/md";
 import { RiNextjsFill } from "react-icons/ri";
 import Title from "../micro/Title";
 import { PageContext } from "@/context/context.provider";
 import WhatIDoSkeleton from "../skeletons/landingPage/WhatIDoSkeleton";
 import { useTheme } from "next-themes";
-import { colors } from "@/utils/constants/constants";
 
 const What_i_do = () => {
   const { resolvedTheme } = useTheme();
   const { isLandingLoaded } = useContext(PageContext);
-  const titlecolor = useAppStore((state) => state.titlecolor);
-  const iconcolor = useAppStore((state) => state.iconcolor);
-  const cardColor = useAppStore((state) => state.cardColor);
   const isDarkMode = resolvedTheme === "dark";
 
   const content = [
@@ -44,26 +39,23 @@ const What_i_do = () => {
                     boxShadow: isDarkMode
                       ? "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px"
                       : "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-                    backgroundColor: cardColor,
                   }}
-                  className="flex items-start mt-5 rounded-xl px-3 py-5 lg:flex-1"
+                  className="custom-card-bg flex items-start mt-5 rounded-xl px-3 py-5 lg:flex-1"
                 >
                   <div width={50} height={50} className="mr-5">
-                    <Icon size={40} color={iconcolor} />
+                    <Icon size={40} className="theme-color" />
                   </div>
                   <div className="flex flex-col items-start align-top">
                     <p
                       noOfLines={1}
                       height={5}
-                      style={{ color: titlecolor }}
-                      className="font-semibold text-base"
+                      className="font-semibold text-base custom-title-color"
                     >
                       {item?.title}
                     </p>
                     <p
                       noOfLines={5}
-                      style={{ color: titlecolor }}
-                      className="text-sm font-light mt-2"
+                      className="text-sm font-light mt-2 custom-title-color"
                     >
                       {item?.des}
                     </p>

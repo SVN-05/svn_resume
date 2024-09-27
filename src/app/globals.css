@@ -2,37 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
-  --primary-color: "#6fc276";
-  --text-color: 0, 0, 0;
-}
-
 @layer base {
   html {
     font-family: Poppins, system-ui;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 34, 34, 34;
-    --background-end-rgb: 34, 34, 34;
-    --text-color: 255, 255, 255;
-  }
+:root {
+  --background-color: white;
+  --text-color: black;
+  --primary-color: #6fc276;
+  --card-bg: #c9e8cb;
+  --title-color: #333;
+  --nav-color: #eeeeee;
+}
+
+.dark {
+  --background-color: #222;
+  --text-color: white;
+  --primary-color: #007ced;
+  --card-bg: #333;
+  --title-color: white;
+  --nav-color: #333;
 }
 
 body {
-  color: #000;
-  background-color: #fff;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-[data-theme="dark"] body {
-  background-color: #222;
-  color: #fff;
+main {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.custom-bg {
+  background-color: var(--background-color);
+}
+
+.custom-theme-bg {
+  background-color: var(--primary-color);
+}
+
+.custom-card-bg {
+  background-color: var(--card-bg);
+}
+
+.custom-theme-background {
+  background: var(--primary-color);
+}
+
+.custom-border {
+  border-color: var(--background-color);
+}
+
+.custom-theme-border {
+  border-color: var(--primary-color);
+}
+
+.theme-color {
+  color: var(--primary-color);
+}
+
+.custom-text-color {
+  color: var(--text-color);
+}
+
+.custom-title-color {
+  color: var(--title-color);
+}
+
+.in-app-nav-bar {
+  background-color: var(--nav-color);
+  border-color: var(--nav-color);
 }
 
 @layer utilities {
@@ -91,4 +133,33 @@ body {
 
 .parent-div:hover .child-div2 {
   margin-right: 0px;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
+.text-content {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.container:hover .text-content {
+  opacity: 1;
+  display: flex;
+  transform: translateY(0);
+}
+
+.card-parent {
+}
+
+.card-parent:hover {
+  scale: 1.05;
 }

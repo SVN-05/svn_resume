@@ -5,7 +5,6 @@ import { colors } from "@/utils/constants/constants";
 
 const PortfolioNavBar = ({ data = [] }) => {
   const isDarkMode = useAppStore((state) => state.isDarkMode);
-  const appBg = useAppStore((state) => state.appBg);
   const lineStrokeColor = isDarkMode ? colors.grey1 : colors.grey14;
   const optionColor = isDarkMode ? colors.grey2 : colors.grey4;
   const portfolioFilter = useAppStore((state) => state.portfolioFilter);
@@ -35,9 +34,8 @@ const PortfolioNavBar = ({ data = [] }) => {
     <div
       style={{
         borderColor: lineStrokeColor,
-        backgroundColor: appBg,
       }}
-      className="sticky top-[78px] flex items-center gap-x-10 border-b-2 py-4 z-50 lg:z-0 lg:relative lg:top-0 lg:pt-10 lg:border-0 lg:self-end"
+      className="custom-bg sticky top-[78px] flex items-center gap-x-10 border-b-2 py-4 z-50 lg:z-0 lg:relative lg:top-0 lg:pt-10 lg:border-0 lg:self-end"
     >
       {data?.map((item) => {
         return <NavText key={item} text={item} />;

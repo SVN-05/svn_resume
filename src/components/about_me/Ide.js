@@ -8,7 +8,6 @@ import SkeletonLandingCard from "../skeletons/cards/SkeletonLandingCard";
 
 const Ide = () => {
   const { isLandingLoaded } = useContext(PageContext);
-  const iconColor = useAppStore((state) => state.iconcolor);
   const cardTextColor = useAppStore((state) => state.isDarkMode)
     ? colors.white
     : colors.grey1;
@@ -26,7 +25,7 @@ const Ide = () => {
                   className="w-full border border-2 border-solid border-grey9 rounded-md p-5 lg:flex-1"
                 >
                   <div className="flex flex-col items-center transition-all duration-600 hover:scale-105">
-                    <Icon size={45} color={iconColor} />
+                    <Icon size={45} className="theme-color" />
                     <p
                       style={{ color: cardTextColor }}
                       className="text-xs mt-3 font-semibold"
